@@ -28,7 +28,7 @@ import butterknife.InjectView;
  * 作用：
  */
 
-public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.BannerViewHolder> {
+public class LiveAdapter extends RecyclerView.Adapter {
 
     public static final int BANNER = 0;
     public static final int XUANXIANG = 1;
@@ -65,15 +65,55 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.BannerViewHold
     }
 
     @Override
-    public BannerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         // 根据不同type
         if (viewType == BANNER) {
 
             return new BannerViewHolder(context, layoutInflater.inflate(R.layout.banner_viewpager, null));
+        } else if (viewType == XUANXIANG) {
+            return new XuanxiangViewhodler(context, layoutInflater.inflate(R.layout.xuanxiang_viewpager, null));
+
+
         }
         return null;
     }
+
+    class XuanxiangViewhodler extends RecyclerView.ViewHolder {
+
+        @InjectView(R.id.iv_guanzhu)
+        ImageView ivGuanzhu;
+        @InjectView(R.id.iv_zhongxin)
+        ImageView ivZhongxin;
+        @InjectView(R.id.iv_sousuo)
+        ImageView ivSousuo;
+        @InjectView(R.id.iv_fenlei)
+        ImageView ivFenlei;
+
+        public XuanxiangViewhodler(final Context context, View itemView) {
+            super(itemView);
+
+        }
+    }
+
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+        if (getItemViewType(position) == BANNER) {
+
+            BannerViewHolder bannerViewHolder = (BannerViewHolder) holder;
+
+
+            bannerViewHolder.setData(datas.getBanner());
+
+        } else if (getItemViewType(position) == XUANXIANG) {
+            XuanxiangViewhodler xuanxiangViewhodler = (XuanxiangViewhodler) holder;
+        }
+
+
+    }
+
 
     class BannerViewHolder extends RecyclerView.ViewHolder {
         private final Context context;
@@ -118,24 +158,9 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.BannerViewHold
         }
     }
 
-    @Override
-    public void onBindViewHolder(BannerViewHolder holder, int position) {
-
-
-        if (getItemViewType(position) == BANNER) {
-
-            BannerViewHolder bannerViewHolder = (BannerViewHolder) holder;
-
-
-            bannerViewHolder.setData(datas.getBanner());
-
-        }
-
-
-    }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return 2;
     }
 }
