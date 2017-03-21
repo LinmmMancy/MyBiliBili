@@ -24,12 +24,15 @@ public class FaxainFragment extends BaseFragment {
         textView.setTextColor(Color.RED);
 
 
-        return textView;
+        View view = View.inflate(context, R.layout.fragment_faxian, null);
+
+
+        return view;
     }
 
     @Override
     public void initData() {
         super.initData();
-        textView.setText("发现");
+        //  textView.setText("发现");
     }
 }

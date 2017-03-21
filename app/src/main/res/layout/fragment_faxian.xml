@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#bfbfbf"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.93"
+                android:background="#ffff">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="3dp"
+                    android:src="@drawable/ic_search_query" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:hint="搜索视频,番剧,up主或AV号"
+                    android:paddingTop="10dp"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/ic_group" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingTop="12dp"
+            android:text="兴趣圈"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bfbfbf">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/ic_header_topic_center" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingTop="12dp"
+            android:text="话题中心"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bfbfbf">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/ic_header_activity_center" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingTop="12dp"
+            android:text="活动中心"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bfbfbf">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/ic_header_activity_center" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingTop="12dp"
+            android:text="小黑屋"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bfbfbf">
+
+    </LinearLayout>
+
+</LinearLayout>
