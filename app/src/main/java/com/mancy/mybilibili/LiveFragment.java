@@ -29,6 +29,9 @@ public class LiveFragment extends BaseFragment {
 
     private LiveAdapter adapter;
 
+
+
+
     @Override
     public View initView() {
 
