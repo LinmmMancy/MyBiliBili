@@ -10,9 +10,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +20,8 @@ import butterknife.InjectView;
 public class MainActivity extends AppCompatActivity {
 
 
-    @InjectView(R.id.fl_main)
-    FrameLayout flMain;
+    //    @InjectView(R.id.fl_main)
+//    FrameLayout flMain;
     @InjectView(R.id.navigation_view)
     NavigationView navigationView;
     @InjectView(R.id.id_drawer_layout)
@@ -46,19 +43,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("  小明哥");
-        toolbar.setLogo(R.drawable.tou);// tou、
-        toolbar.setTitleTextColor(Color.YELLOW);
         toolbar.setBackgroundColor(Color.parseColor("#FB7299"));
 
-        toolbar.setNavigationIcon(R.drawable.ic_drawer_home);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "123", Toast.LENGTH_SHORT).show();
-
-            }
-        });
 
         initData();
     }

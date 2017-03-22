@@ -4,7 +4,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.mancy.mybilibili.LiveAdapter.LiveAdapter;
@@ -26,7 +25,6 @@ public class LiveFragment extends BaseFragment {
     @InjectView(R.id.rv_home)
     RecyclerView rvHome;
 
-    private TextView textView;
     private DirecTvInfo.DataBean datas;
 
     private LiveAdapter adapter;
@@ -69,15 +67,16 @@ public class LiveFragment extends BaseFragment {
                     }
                 });
 
+
     }
+
 
     private void processData(String json) {
         DirecTvInfo direcTvInfo = new Gson().fromJson(json, DirecTvInfo.class);
         datas = direcTvInfo.getData();
         adapter = new LiveAdapter(context, datas);
-
-
         rvHome.setAdapter(adapter);
+
 
         GridLayoutManager manager = new GridLayoutManager(context, 1);
         rvHome.setLayoutManager(manager);
