@@ -2,15 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="8dp">
 
     <ImageView
         android:id="@+id/ib_picture"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/ic_noface" />
 
     <TextView

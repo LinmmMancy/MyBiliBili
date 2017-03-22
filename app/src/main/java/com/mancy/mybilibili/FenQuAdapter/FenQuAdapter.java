@@ -1,4 +1,4 @@
-package com.mancy.mybilibili.live.adpter;
+package com.mancy.mybilibili.FenQuAdapter;
 
 import android.content.Context;
 import android.view.View;
@@ -9,9 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
-import com.mancy.mybilibili.bean.DirecTvInfo;
-
-import java.util.List;
+import com.mancy.mybilibili.bean.FenQuBean;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -23,20 +21,18 @@ import butterknife.InjectView;
  * 作用：
  */
 
-public class EnterAdapter extends BaseAdapter {
+public class FenQuAdapter extends BaseAdapter {
     private final Context context;
-    private final List<DirecTvInfo.DataBean.PartitionsBean> datas;
+    private final FenQuBean datas;
 
-
-    public EnterAdapter(Context context, List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
+    public FenQuAdapter(Context context, FenQuBean datas) {
         this.context = context;
-        this.datas = partitions;
-
+        this.datas = datas;
     }
 
     @Override
     public int getCount() {
-        return 6;
+        return datas.getData().size();
     }
 
     @Override
@@ -53,20 +49,21 @@ public class EnterAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.enter_view_item, null);
-
+            convertView = View.inflate(context, R.layout.fenqu_item_view, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.tvName.setText(datas.get(position).getLives().get(2).getOwner().getName());
-        viewHolder.tvContent.setText(datas.get(position).getLives().get(2).getTitle());
+        viewHolder.tvName.setText("播放了" +
+                datas.getData().get(position).getBody().get(0).getPlay() + "次");
+        viewHolder.tvContent.setText(
+                datas.getData().get(position).getBody().get(0).getTitle());
+
         Glide.with(context)
-                .load(datas.get(position).getLives().get(2).getCover().getSrc())
+                .load(
+                        datas.getData().get(position).getBody().get(0).getCover())
                 .into(viewHolder.ibPicture);
-
-
         return convertView;
     }
 

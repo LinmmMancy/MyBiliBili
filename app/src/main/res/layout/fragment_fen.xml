@@ -7,12 +7,21 @@
     <GridView
         android:id="@+id/gv_partion"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="450dp"
         android:numColumns="4"></GridView>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="#33000000" />
+        android:layout_height="1dp"
+        android:background="#33000000"
+        android:paddingTop="-6dp" />
+
+
+        <GridView
+            android:id="@+id/gv_partion2"
+            android:layout_width="match_parent"
+            android:layout_height="900dp"
+            android:numColumns="2"></GridView>
+
 
 </LinearLayout>

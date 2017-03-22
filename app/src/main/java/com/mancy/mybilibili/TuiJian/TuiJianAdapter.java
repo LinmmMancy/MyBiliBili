@@ -1,4 +1,4 @@
-package com.mancy.mybilibili.live.adpter;
+package com.mancy.mybilibili.TuiJian;
 
 import android.content.Context;
 import android.view.View;
@@ -11,8 +11,6 @@ import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
 import com.mancy.mybilibili.bean.DirecTvInfo;
 
-import java.util.List;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -23,20 +21,21 @@ import butterknife.InjectView;
  * 作用：
  */
 
-public class EnterAdapter extends BaseAdapter {
+public class TuiJianAdapter extends BaseAdapter {
+
     private final Context context;
-    private final List<DirecTvInfo.DataBean.PartitionsBean> datas;
+    private final DirecTvInfo.DataBean datas;
 
-
-    public EnterAdapter(Context context, List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
+    public TuiJianAdapter(Context context, DirecTvInfo.DataBean data) {
         this.context = context;
-        this.datas = partitions;
+        this.datas = data;
 
     }
 
+
     @Override
     public int getCount() {
-        return 6;
+        return datas.getPartitions().size();
     }
 
     @Override
@@ -53,19 +52,18 @@ public class EnterAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.enter_view_item, null);
-
+            convertView = View.inflate(context, R.layout.tuijian_item_view, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.tvName.setText(datas.get(position).getLives().get(2).getOwner().getName());
-        viewHolder.tvContent.setText(datas.get(position).getLives().get(2).getTitle());
-        Glide.with(context)
-                .load(datas.get(position).getLives().get(2).getCover().getSrc())
-                .into(viewHolder.ibPicture);
 
+        viewHolder.tvName.setText(datas.getPartitions().get(position).getLives().get(5).getOwner().getName());
+        viewHolder.tvContent.setText(datas.getPartitions().get(position).getLives().get(5).getTitle());
+        Glide.with(context)
+                .load(datas.getPartitions().get(position).getLives().get(5).getCover().getSrc())
+                .into(viewHolder.ibPicture);
 
         return convertView;
     }
@@ -77,8 +75,8 @@ public class EnterAdapter extends BaseAdapter {
         TextView tvContent;
         @InjectView(R.id.tv_name)
         TextView tvName;
-        @InjectView(R.id.tv_watching_number)
-        TextView tvWatchingNumber;
+        @InjectView(R.id.tv_name2)
+        TextView tvName2;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

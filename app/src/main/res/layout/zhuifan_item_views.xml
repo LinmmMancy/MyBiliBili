@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_item_runplay"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+
+        <TextView
+            android:id="@+id/item_runplay_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:text="2030人追番"
+            android:textColor="#ffffff"
+            android:textSize="8sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/item_runplay_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="黑白来看守所第二季"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/item_update_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跟新至15话"
+        android:textSize="8sp" />
+</LinearLayout>

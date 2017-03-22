@@ -75,8 +75,8 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:background="#fb7299"
-                    android:paddingLeft="60dp"
-                    android:paddingRight="60dp" />
+
+                     />
             </LinearLayout>
 
 
@@ -95,7 +95,7 @@
                     android:id="@+id/view_pager"
 
                     android:layout_width="match_parent"
-                    android:layout_height="1000dp"
+                    android:layout_height="900dp"
                     android:visibility="visible"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
             </LinearLayout>
