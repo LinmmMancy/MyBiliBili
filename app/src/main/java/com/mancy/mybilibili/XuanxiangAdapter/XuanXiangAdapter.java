@@ -1,4 +1,4 @@
-package com.mancy.mybilibili.TuiJian;
+package com.mancy.mybilibili.XuanxiangAdapter;
 
 import android.content.Context;
 import android.view.View;
@@ -7,35 +7,41 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
-import com.mancy.mybilibili.bean.DirecTvInfo;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * Created by linmingming(林明明) on 2017/3/22.
+ * Created by linmingming(林明明) on 2017/3/23.
  * QQ ：519660797
  * Tel: 17600305015
  * 作用：
  */
 
-public class TuiJianAdapter extends BaseAdapter {
-
+public class XuanXiangAdapter extends BaseAdapter {
     private final Context context;
-    private final DirecTvInfo.DataBean datas;
+    private Integer[] mThumbIds = {
+            R.drawable.live_home_follow_anchor,
+            R.drawable.live_home_live_center,
+            R.drawable.live_home_search_room,
+            R.drawable.live_home_all_category,
 
-    public TuiJianAdapter(Context context, DirecTvInfo.DataBean data) {
+    };
+    private String[] mText = {
+            "关注", "中心",
+            "搜索", "分类",
+    };
+
+
+    public XuanXiangAdapter(Context context) {
         this.context = context;
-        this.datas = data;
 
     }
 
-
     @Override
     public int getCount() {
-        return datas.getPartitions().size();
+        return mThumbIds.length;
     }
 
     @Override
@@ -52,30 +58,23 @@ public class TuiJianAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.tuijian_item_view, null);
+            convertView = View.inflate(context, R.layout.item_view_for, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
-        viewHolder.tvName.setText(datas.getPartitions().get(position).getLives().get(5).getOwner().getName());
-        viewHolder.tvContent.setText(datas.getPartitions().get(position).getLives().get(5).getTitle());
-        Glide.with(context)
-                .load(datas.getPartitions().get(position).getLives().get(5).getCover().getSrc())
-                .into(viewHolder.ibPicture);
+        viewHolder.ivItemPartion.setImageResource(mThumbIds[position]);
+        viewHolder.tvItemPartion.setText(mText[position]);
 
         return convertView;
     }
 
     static class ViewHolder {
-        @InjectView(R.id.ib_picture)
-        ImageView ibPicture;
-        @InjectView(R.id.tv_content)
-        TextView tvContent;
-        @InjectView(R.id.tv_name)
-        TextView tvName;
-
+        @InjectView(R.id.iv_item_partion)
+        ImageView ivItemPartion;
+        @InjectView(R.id.tv_item_partion)
+        TextView tvItemPartion;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

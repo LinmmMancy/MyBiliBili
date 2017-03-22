@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
+import com.mancy.mybilibili.XuanxiangAdapter.XuanXiangAdapter;
 import com.mancy.mybilibili.bean.DirecTvInfo;
 import com.mancy.mybilibili.gridrView.Constants;
 import com.mancy.mybilibili.gridrView.HomeBean;
@@ -46,11 +48,12 @@ import okhttp3.Call;
 public class LiveAdapter extends RecyclerView.Adapter {
 
     public static final int BANNER = 0;
-    public static final int HOT = 1;
-    public static final int MAPPING = 2;
-    public static final int ENTETTAINMENT = 3;
-    public static final int SING = 4;
-    public static final int GAMES = 5;
+    public static final int ITEM = 1;
+    public static final int HOT = 2;
+    public static final int MAPPING = 3;
+    public static final int ENTETTAINMENT = 4;
+    public static final int SING = 5;
+    public static final int GAMES = 6;
 
 
     public int currenType = BANNER;
@@ -81,6 +84,9 @@ public class LiveAdapter extends RecyclerView.Adapter {
         if (position == BANNER) {
             currenType = BANNER;
 
+        } else if (position == ITEM) {
+            currenType = ITEM;
+//        } else if (position == MAPPING) {
         } else if (position == HOT) {
             currenType = HOT;
         } else if (position == MAPPING) {
@@ -102,6 +108,10 @@ public class LiveAdapter extends RecyclerView.Adapter {
         if (getItemViewType(position) == BANNER) {
             BannerViewHolder bannerViewHolder = (BannerViewHolder) holder;
             bannerViewHolder.setData(datas.getBanner());
+        } else if (getItemViewType(position) == ITEM) {
+            ITEMViewHolder itemViewHolder = (ITEMViewHolder) holder;
+            itemViewHolder.setData(context);
+
         } else if (getItemViewType(position) == HOT) {
             hotViewHolder = (HotViewHolder) holder;
             getDataFromNet();
@@ -135,6 +145,8 @@ public class LiveAdapter extends RecyclerView.Adapter {
         if (viewType == BANNER) {
 
             return new BannerViewHolder(context, layoutInflater.inflate(R.layout.banner_viewpager, null));
+        } else if (viewType == ITEM) {
+            return new ITEMViewHolder(context, layoutInflater.inflate(R.layout.xuanxiang_viewpager, null));
         } else if (viewType == HOT) {
             return new HotViewHolder(context, layoutInflater.inflate(R.layout.hot_item, null));
         } else if (viewType == MAPPING) {
@@ -148,6 +160,33 @@ public class LiveAdapter extends RecyclerView.Adapter {
             return new GAMESViewHodler(context, layoutInflater.inflate(R.layout.game_item, null));
         }
         return null;
+    }
+
+    class ITEMViewHolder extends RecyclerView.ViewHolder {
+        private final Context context;
+        @InjectView(R.id.gv_partion)
+        GridView gvPartion;
+        XuanXiangAdapter adapter;
+
+        public ITEMViewHolder(Context context, View itemView) {
+            super(itemView);
+            this.context = context;
+            ButterKnife.inject(this, itemView);
+        }
+
+
+        public void setData(final Context context) {
+            adapter = new XuanXiangAdapter(context);
+            gvPartion.setAdapter(adapter);
+            gvPartion.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Toast.makeText(context, "postion"+position, Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+        }
     }
 
     class GAMESViewHodler extends RecyclerView.ViewHolder {
@@ -378,7 +417,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         public void setData(List<DirecTvInfo.DataBean.BannerBean> data) {
             List<String> images = new ArrayList<>();
-            for (int i = 0; i<=1; i++) {
+            for (int i = 0; i <= 1; i++) {
                 // images.add("http://live.bilibili.com/AppNewIndex/common?_device=android&appkey=1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&scale=hdpi&ts=1490013188000&sign=92541a11ed62841120e786e637b9db3b");
                 images.add(data.get(0).getImg());
             }
@@ -393,6 +432,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
                 }
             }).start();
             //  banner.setBannerAnimation(BackgroundToForegroundTransformer.class);
+            banner.isAutoPlay(false);
 
             banner.setOnBannerListener(new OnBannerListener() {
                 @Override
@@ -410,6 +450,6 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 6;
+        return 7;
     }
 }

@@ -55,7 +55,7 @@ public class MappingAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         Log.e("TAG", "getView: 44444444444444444444444");
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.maiping_item, null);
+            convertView = View.inflate(context, R.layout.maiping_item_view, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
 
