@@ -10,25 +10,12 @@
         android:layout_height="wrap_content"
         android:numColumns="4"></GridView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#33000000"
-        android:paddingTop="5dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1300dp"
-        android:orientation="vertical">
-
-        <GridView
-            android:id="@+id/gv_partion2"
-            android:layout_width="match_parent"
-            android:layout_height="1300dp"
-            android:numColumns="2"></GridView>
 
 
-    </LinearLayout>
+
+     <include layout="@layout/mapping_item"/>
+
+
 
 
 </LinearLayout>

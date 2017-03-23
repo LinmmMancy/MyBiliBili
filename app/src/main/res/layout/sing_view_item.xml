@@ -60,15 +60,14 @@
 
 
             <ImageView
-                android:layout_width="8dp"
-                android:layout_height="8dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:background="@drawable/ic_watching" />
 
             <TextView
                 android:id="@+id/tv_watching_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:text="497"
                 android:textSize="10dp" />
          </LinearLayout>

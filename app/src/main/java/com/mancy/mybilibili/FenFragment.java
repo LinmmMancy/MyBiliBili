@@ -1,14 +1,20 @@
 package com.mancy.mybilibili;
 
+import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.mancy.mybilibili.FenQuAdapter.FenQuAdapter;
 import com.mancy.mybilibili.bean.FenQuBean;
+import com.mancy.mybilibili.gridrView.MyGridView;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -27,8 +33,17 @@ public class FenFragment extends BaseFragment {
 
     @InjectView(R.id.gv_partion)
     GridView gvPartion;
-    @InjectView(R.id.gv_partion2)
-    GridView gvPartion2;
+
+    @InjectView(R.id.title_pic)
+    ImageView titlePic;
+    @InjectView(R.id.titles)
+    TextView titles;
+    @InjectView(R.id.tv_more_hot)
+    TextView tvMoreHot;
+    @InjectView(R.id.gv_hot)
+    MyGridView gvHot;
+    @InjectView(R.id.textView8)
+    TextView textView8;
     private ItemAdapter itemAdapter;
 
     private FenQuBean datas;
@@ -82,8 +97,8 @@ public class FenFragment extends BaseFragment {
         FenQuBean fenQuBean = new Gson().fromJson(json, FenQuBean.class);
         datas = fenQuBean;
         adapter = new FenQuAdapter(context, datas);
-        gvPartion2.setAdapter(adapter);
-        gvPartion2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gvHot.setAdapter(adapter);
+        gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(context, "posotion" + position, Toast.LENGTH_SHORT).show();
@@ -101,4 +116,11 @@ public class FenFragment extends BaseFragment {
     }
 
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.inject(this, rootView);
+        return rootView;
+    }
 }

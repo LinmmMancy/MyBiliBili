@@ -32,7 +32,7 @@ public class FenQuAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return datas.getData().size();
+        return 6;
     }
 
     @Override

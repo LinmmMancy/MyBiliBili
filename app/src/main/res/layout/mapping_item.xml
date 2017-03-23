@@ -26,16 +26,29 @@
             android:layout_marginLeft="5dp"
             android:text="绘图专区"
             android:textColor="#000" />
-
+        <TextView
+            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:textColor="#000"
+            android:text="当前有" />
         <TextView
             android:id="@+id/tv_more_hot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:drawablePadding="5dp"
-            android:drawableRight="@drawable/home_arrow_right"
+
             android:gravity="end"
-            android:text="当前有222个主播" />
+            android:textColor="#fb7299"
+            android:text="222" />
+        <TextView
+
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#000"
+
+            android:text="个主播 >" />
     </LinearLayout>
 
     <!--<com.atguigu.shoppingmall.home.view.NoScrollGridView

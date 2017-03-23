@@ -64,8 +64,10 @@ public class MappingAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.tvContent.setText(datas.get(position).getLives().get(1).getTitle());
+
         Log.e("TAG", "getView: 22222222222222222222222222222222222");
         viewHolder.tvName.setText(datas.get(position).getLives().get(1).getOwner().getName());
+        viewHolder.tvWatchingNumber.setText(datas.get(position).getLives().get(1).getOnline()+"");
         Glide.with(context)
                 .load(datas.get(position).getLives().get(position).getCover().getSrc()
                 )

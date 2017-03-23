@@ -62,6 +62,7 @@ public class EnterAdapter extends BaseAdapter {
         }
         viewHolder.tvName.setText(datas.get(position).getLives().get(2).getOwner().getName());
         viewHolder.tvContent.setText(datas.get(position).getLives().get(2).getTitle());
+        viewHolder.tvWatchingNumber.setText(datas.get(position).getLives().get(2).getOnline()+"");
         Glide.with(context)
                 .load(datas.get(position).getLives().get(2).getCover().getSrc())
                 .into(viewHolder.ibPicture);

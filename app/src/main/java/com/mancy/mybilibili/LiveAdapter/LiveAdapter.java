@@ -181,7 +181,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
             gvPartion.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(context, "postion"+position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "postion" + position, Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -211,6 +211,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         public void setData(List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
             adapter = new GameAdapter(context, partitions);
+            tvMoreHot.setText(datas.getPartitions().get(3).getPartition().getCount()+"");
             Glide.with(context)
                     .load(datas.getPartitions().get(3).getPartition().getSub_icon().getSrc())
                     .into(titlePic);
@@ -250,7 +251,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         public void setData(List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
             adapter = new SingAdapter(context, partitions);
-
+            tvMoreHot.setText(datas.getPartitions().get(2).getPartition().getCount()+"");
             gvHot.setAdapter(adapter);
             titles.setText(datas.getPartitions().get(2).getLives().get(0).getArea());
             Glide.with(context)
@@ -270,11 +271,16 @@ public class LiveAdapter extends RecyclerView.Adapter {
     class EnterViewHodler extends RecyclerView.ViewHolder {
 
         private final Context context;
+        @InjectView(R.id.title_pic)
+        ImageView titlePic;
+        @InjectView(R.id.titles)
+        TextView titles;
         @InjectView(R.id.tv_more_hot)
         TextView tvMoreHot;
         @InjectView(R.id.gv_hot)
         MyGridView gvHot;
-
+        @InjectView(R.id.textView8)
+        TextView textView8;
         EnterAdapter adapter;
 
 
@@ -287,6 +293,11 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         public void setData(List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
             adapter = new EnterAdapter(context, partitions);
+            tvMoreHot.setText(datas.getPartitions().get(1).getPartition().getCount()+"");
+            Glide.with(context)
+                    .load(datas.getPartitions().get(1).getPartition().getSub_icon().getSrc())
+                    .into(titlePic);
+            titles.setText(datas.getPartitions().get(1).getPartition().getName());
 
             gvHot.setAdapter(adapter);
             gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -303,10 +314,17 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         private final Context context;
 
+
+        @InjectView(R.id.title_pic)
+        ImageView titlePic;
+        @InjectView(R.id.titles)
+        TextView titles;
         @InjectView(R.id.tv_more_hot)
         TextView tvMoreHot;
         @InjectView(R.id.gv_hot)
         MyGridView gvHot;
+        @InjectView(R.id.textView8)
+        TextView textView8;
 
         MappingAdapter mappingAdapter;
 
@@ -321,6 +339,12 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
             mappingAdapter = new MappingAdapter(context, partitions);
             gvHot.setAdapter(mappingAdapter);
+            tvMoreHot.setText(datas.getPartitions().get(0).getPartition().getCount()+"");
+            Glide.with(context)
+                    .load(datas.getPartitions().get(0).getPartition().getSub_icon().getSrc())
+                    .into(titlePic);
+            titles.setText(datas.getPartitions().get(0).getPartition().getName());
+
 
             gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -336,10 +360,17 @@ public class LiveAdapter extends RecyclerView.Adapter {
     class HotViewHolder extends RecyclerView.ViewHolder {
 
         private final Context context;
+        @InjectView(R.id.title_pic)
+        ImageView titlePic;
+        @InjectView(R.id.titles)
+        TextView titles;
         @InjectView(R.id.tv_more_hot)
         TextView tvMoreHot;
         @InjectView(R.id.gv_hot)
         MyGridView gvHot;
+        @InjectView(R.id.textView8)
+        TextView textView8;
+
 
         HotAdapter hotAdapter;
 
@@ -355,8 +386,10 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
 
             hotAdapter = new HotAdapter(context, hot_info);
+            titles.setText("硅谷专区");
 
             gvHot.setAdapter(hotAdapter);
+
 
             // 设置点击事件
             gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {

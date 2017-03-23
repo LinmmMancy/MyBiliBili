@@ -62,6 +62,7 @@ public class SingAdapter extends BaseAdapter {
 
         viewHolder.tvName.setText(datas.get(position).getLives().get(3).getOwner().getName());
         viewHolder.tvContent.setText(datas.get(position).getLives().get(3).getTitle());
+        viewHolder.tvWatchingNumber.setText(datas.get(position).getLives().get(3).getOnline()+"");
         Glide.with(context)
                 .load(datas.get(position).getLives().get(3).getCover().getSrc())
                 .into(viewHolder.ibPicture);
