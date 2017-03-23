@@ -1,78 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="130dp">
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="#ffffff"
+        android:id="@+id/item_live_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="7dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="#fff"
         app:cardCornerRadius="2dp"
-        app:cardElevation="5dp">
+        app:cardElevation="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:layout_height="190dp"
+            android:orientation="vertical">
 
-
-            <ImageView
-                android:id="@+id/ib_picture"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_weight="0.20"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_noface" />
-
-            <TextView
-                android:id="@+id/tv_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:lines="1"
-                android:text="画个6"
-                android:textColor="#000"
-                android:textSize="13dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-
-                    android:text="巴拉拉"
-                    android:textSize="10dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
+                android:layout_height="110dp">
 
                 <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:background="@drawable/ic_watching" />
+                    android:id="@+id/ibPicture"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:scaleType="fitXY" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/tv_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:drawableLeft="@drawable/ic_info_views_large"
+                        android:drawablePadding="3dp"
+                        android:text="1.2万"
+                        android:textColor="#eaeaea"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_danmu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_info_danmakus_large"
+                        android:drawablePadding="3dp"
+                        android:text="666"
+                        android:textColor="#eaeaea"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00"
+                        android:textColor="#eaeaea"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
 
                 <TextView
-                    android:id="@+id/tv_watching_number"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvContent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="497"
-                    android:textSize="10dp" />
-            </LinearLayout>
+                    android:layout_margin="6dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
 
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="3dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#66000000"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
 
         </LinearLayout>
+
     </android.support.v7.widget.CardView>
-</FrameLayout>
+</LinearLayout>

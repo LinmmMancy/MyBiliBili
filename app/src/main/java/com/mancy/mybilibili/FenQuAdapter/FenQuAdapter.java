@@ -1,6 +1,7 @@
 package com.mancy.mybilibili.FenQuAdapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -67,15 +68,22 @@ public class FenQuAdapter extends BaseAdapter {
         return convertView;
     }
 
-    static class ViewHolder {
-        @InjectView(R.id.ib_picture)
+
+    class ViewHolder {
+        @InjectView(R.id.ibPicture)
         ImageView ibPicture;
-        @InjectView(R.id.tv_content)
+        @InjectView(R.id.tv_play)
+        TextView tvPlay;
+        @InjectView(R.id.tv_danmu)
+        TextView tvDanmu;
+        @InjectView(R.id.tv_time)
+        TextView tvTime;
+        @InjectView(R.id.tvContent)
         TextView tvContent;
-        @InjectView(R.id.tv_name)
+        @InjectView(R.id.tvName)
         TextView tvName;
-        @InjectView(R.id.tv_watching_number)
-        TextView tvWatchingNumber;
+        @InjectView(R.id.item_live_layout)
+        CardView itemLiveLayout;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

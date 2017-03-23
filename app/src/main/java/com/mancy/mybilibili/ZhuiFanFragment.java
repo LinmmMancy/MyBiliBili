@@ -1,17 +1,12 @@
 package com.mancy.mybilibili;
 
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.mancy.mybilibili.ZhuiFan.ZhuiFanAdapter;
-import com.mancy.mybilibili.ZhuiFan.ZhuiFanAdapter2;
+import com.mancy.mybilibili.ZhuiAdapter.ZhuiAdapter;
 import com.mancy.mybilibili.bean.RunPlayBean;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -28,24 +23,13 @@ import okhttp3.Call;
  */
 public class ZhuiFanFragment extends BaseFragment {
 
-    @InjectView(R.id.imageView3)
-    ImageView imageView3;
-    @InjectView(R.id.imageView4)
-    ImageView imageView4;
-    @InjectView(R.id.textView4)
-    TextView textView4;
-    @InjectView(R.id.ll_more_play)
-    LinearLayout llMorePlay;
-    @InjectView(R.id.gv_play)
-    GridView gvPlay;
-    @InjectView(R.id.gv_play2)
-    GridView gvPlay2;
+    @InjectView(R.id.rv_home)
+    RecyclerView rvHome;
 
-    private ZhuiFanAdapter adapter;
-    private ZhuiFanAdapter2 adapter2;
-
+    private ZhuiAdapter adapter;
 
     private RunPlayBean datas;
+
 
     @Override
     public View initView() {
@@ -91,19 +75,13 @@ public class ZhuiFanFragment extends BaseFragment {
 
 
         datas = bean;
-        adapter = new ZhuiFanAdapter(context, datas);
-        adapter2 = new ZhuiFanAdapter2(context, datas);
+        adapter = new ZhuiAdapter(context, datas);
 
-        gvPlay.setAdapter(adapter);
-        gvPlay2.setAdapter(adapter2);
+        rvHome.setAdapter(adapter);
 
-        gvPlay.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(context, "positon" + position, Toast.LENGTH_SHORT).show();
-            }
-        });
 
+        GridLayoutManager manager = new GridLayoutManager(context, 1);
+        rvHome.setLayoutManager(manager);
 
     }
 
@@ -113,6 +91,4 @@ public class ZhuiFanFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
-
-
 }

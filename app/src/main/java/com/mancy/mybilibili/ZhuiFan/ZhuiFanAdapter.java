@@ -22,17 +22,20 @@ import butterknife.InjectView;
  */
 
 public class ZhuiFanAdapter extends BaseAdapter {
-    private final Context context;
-    private final RunPlayBean datas;
 
-    public ZhuiFanAdapter(Context context, RunPlayBean datas) {
+
+    private final Context context;
+    private final RunPlayBean.ResultBean datas;
+
+    public ZhuiFanAdapter(Context context, RunPlayBean.ResultBean datas) {
         this.context = context;
         this.datas = datas;
+
     }
 
     @Override
     public int getCount() {
-        return datas.getResult().getPrevious().getList().size();
+        return datas.getPrevious().getList().size();
     }
 
     @Override
@@ -57,13 +60,13 @@ public class ZhuiFanAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.itemRunplayName.setText(
-                datas.getResult().getPrevious().getList().get(position).getTitle());
+                datas.getPrevious().getList().get(position).getTitle());
         viewHolder.itemRunplayNumber.setText(
-                datas.getResult().getPrevious().getList().get(position).getFavourites() + "人");
+                datas.getPrevious().getList().get(position).getFavourites() + "人");
         viewHolder.itemUpdateNumber.setText(
-                "更新到第" + datas.getResult().getPrevious().getList().get(position).getNewest_ep_index() + "话");
+                "更新到第" + datas.getPrevious().getList().get(position).getNewest_ep_index() + "话");
         Glide.with(context)
-                .load(datas.getResult().getPrevious().getList().get(position).getCover())
+                .load(datas.getPrevious().getList().get(position).getCover())
                 .into(viewHolder.ivItemRunplay);
 
 
