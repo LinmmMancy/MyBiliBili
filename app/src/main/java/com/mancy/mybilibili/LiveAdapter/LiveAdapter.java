@@ -211,7 +211,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         public void setData(List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
             adapter = new GameAdapter(context, partitions);
-            tvMoreHot.setText(datas.getPartitions().get(3).getPartition().getCount()+"");
+            tvMoreHot.setText(datas.getPartitions().get(3).getPartition().getCount() + "");
             Glide.with(context)
                     .load(datas.getPartitions().get(3).getPartition().getSub_icon().getSrc())
                     .into(titlePic);
@@ -251,7 +251,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         public void setData(List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
             adapter = new SingAdapter(context, partitions);
-            tvMoreHot.setText(datas.getPartitions().get(2).getPartition().getCount()+"");
+            tvMoreHot.setText(datas.getPartitions().get(2).getPartition().getCount() + "");
             gvHot.setAdapter(adapter);
             titles.setText(datas.getPartitions().get(2).getLives().get(0).getArea());
             Glide.with(context)
@@ -293,7 +293,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         public void setData(List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
             adapter = new EnterAdapter(context, partitions);
-            tvMoreHot.setText(datas.getPartitions().get(1).getPartition().getCount()+"");
+            tvMoreHot.setText(datas.getPartitions().get(1).getPartition().getCount() + "");
             Glide.with(context)
                     .load(datas.getPartitions().get(1).getPartition().getSub_icon().getSrc())
                     .into(titlePic);
@@ -339,7 +339,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
             mappingAdapter = new MappingAdapter(context, partitions);
             gvHot.setAdapter(mappingAdapter);
-            tvMoreHot.setText(datas.getPartitions().get(0).getPartition().getCount()+"");
+            tvMoreHot.setText(datas.getPartitions().get(0).getPartition().getCount() + "");
             Glide.with(context)
                     .load(datas.getPartitions().get(0).getPartition().getSub_icon().getSrc())
                     .into(titlePic);
