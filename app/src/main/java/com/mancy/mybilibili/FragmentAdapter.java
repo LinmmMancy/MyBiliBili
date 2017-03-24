@@ -26,6 +26,8 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
     }
 
 
+
+
     @Override
     public Fragment getItem(int position) {
         return mFragments.get(position);

@@ -17,6 +17,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.mancy.mybilibili.FenQuAdapter.FenFragment;
+import com.mancy.mybilibili.LiveAdapter.LiveFragment;
+import com.mancy.mybilibili.TuiJian.TuijianFragment;
+import com.mancy.mybilibili.ZhuiFan.ZhuiFanFragment;
+import com.mancy.mybilibili.faxian.fragment.FaxainFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
         tablayout.addTab(tablayout.newTab().setText(titles.get(2)));
 
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new com.mancy.mybilibili.LiveFragment());
-        fragments.add(new com.mancy.mybilibili.TuijianFragment());
-        fragments.add(new com.mancy.mybilibili.ZhuiFanFragment());
-        fragments.add(new com.mancy.mybilibili.FenFragment());
+        fragments.add(new LiveFragment());
+        fragments.add(new TuijianFragment());
+        fragments.add(new ZhuiFanFragment());
+        fragments.add(new FenFragment());
         fragments.add(new FaxainFragment());
 
         viewPager.setOffscreenPageLimit(2);
