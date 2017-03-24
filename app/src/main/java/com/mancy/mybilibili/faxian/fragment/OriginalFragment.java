@@ -1,21 +1,18 @@
 package com.mancy.mybilibili.faxian.fragment;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.mancy.mybilibili.BaseFragment;
 import com.mancy.mybilibili.R;
-import com.mancy.mybilibili.faxian.adpter.OriginalAdapter;
+import com.mancy.mybilibili.faxian.adpter.OriginalsAdapter;
 import com.mancy.mybilibili.faxian.bean.OriginalBean;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
-
-import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -29,13 +26,14 @@ import okhttp3.Call;
  */
 
 public class OriginalFragment extends BaseFragment {
-    @InjectView(R.id.lv_origina)
-    ListView lvOrigina;
+
+    @InjectView(R.id.rl_recycler)
+    RecyclerView rlRecycler;
     private TextView textView;
     private OriginalBean originalBean;
-    private List<OriginalBean.DataBean> datas;
 
-    private OriginalAdapter adapter;
+    private OriginalsAdapter adapter;
+
 
     @Override
     public View initView() {
@@ -87,18 +85,16 @@ public class OriginalFragment extends BaseFragment {
 
     private void processData(String json) {
         originalBean = new Gson().fromJson(json, OriginalBean.class);
-        datas = originalBean.getData();
+        OriginalBean data = originalBean;
 
-        adapter = new OriginalAdapter(context, datas);
+        adapter = new OriginalsAdapter(context, data);
 
-        lvOrigina.setAdapter(adapter);
+        rlRecycler.setAdapter(adapter);
 
-        lvOrigina.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(context, "" + datas.get(position).getTitle(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+
+        rlRecycler.setLayoutManager(linearLayoutManager);
+
 
     }
 
@@ -108,4 +104,6 @@ public class OriginalFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
+
+
 }

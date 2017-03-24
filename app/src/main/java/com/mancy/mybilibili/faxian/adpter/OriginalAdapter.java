@@ -11,8 +11,6 @@ import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
 import com.mancy.mybilibili.faxian.bean.OriginalBean;
 
-import java.util.List;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -25,16 +23,18 @@ import butterknife.InjectView;
 
 public class OriginalAdapter extends BaseAdapter {
     private final Context context;
-    private final List<OriginalBean.DataBean> datas;
+    private final OriginalBean datas;
 
-    public OriginalAdapter(Context context, List<OriginalBean.DataBean> datas) {
-        this.context = context;
-        this.datas = datas;
+
+    public OriginalAdapter(Context context, OriginalBean originalBean) {
+        this.context= context;
+        this.datas= originalBean;
+
     }
 
     @Override
     public int getCount() {
-        return datas.size();
+        return datas.getData().size()  ;
     }
 
     @Override
@@ -60,11 +60,11 @@ public class OriginalAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.tvXuhao.setText(datas.get(position) + "");
-        viewHolder.tvXiangqing.setText(datas.get(position).getTitle());
+        viewHolder.tvXuhao.setText(datas.getData().get(position).getTitle());
+        viewHolder.tvXiangqing.setText(datas.getData().get(position).getTitle());
 
         Glide.with(context)
-                .load(datas.get(position).getCover())
+                .load(datas.getData().get(position).getCover())
                 .into(viewHolder.ivImage);
         return convertView;
     }
