@@ -1,5 +1,6 @@
 package com.mancy.mybilibili;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.CardView;
@@ -182,8 +183,8 @@ public class FaxainFragment extends BaseFragment {
         tvMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isShowMore){
-                    isShowMore =false;
+                if (isShowMore) {
+                    isShowMore = false;
 
                     hideScrollView.setVisibility(View.VISIBLE);
 
@@ -191,18 +192,25 @@ public class FaxainFragment extends BaseFragment {
                     tagsLayout.setVisibility(View.GONE);
 
                     Drawable updrawable = getResources().getDrawable(R.drawable.ic_arrow_up_gray_round);
-                    updrawable.setBounds(0,0,updrawable.getMinimumWidth(),updrawable.getMinimumHeight());
-                    tvMore.setCompoundDrawables(updrawable,null,null,null);
+                    updrawable.setBounds(0, 0, updrawable.getMinimumWidth(), updrawable.getMinimumHeight());
+                    tvMore.setCompoundDrawables(updrawable, null, null, null);
 
-                }else {
-                    isShowMore=true;
+                } else {
+                    isShowMore = true;
                     hideScrollView.setVisibility(View.GONE);
                     tvMore.setText("查看更多");
                     tagsLayout.setVisibility(View.VISIBLE);
                     Drawable downdrawable = getResources().getDrawable(R.drawable.ic_arrow_down_gray_round);
-                    downdrawable.setBounds(0,0,downdrawable.getMinimumWidth(),downdrawable.getMinimumHeight());
-                    tvMore.setCompoundDrawables(downdrawable,null,null,null);
+                    downdrawable.setBounds(0, 0, downdrawable.getMinimumWidth(), downdrawable.getMinimumHeight());
+                    tvMore.setCompoundDrawables(downdrawable, null, null, null);
                 }
+            }
+        });
+        topicCenterLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, TopicCenterActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,7 +1,8 @@
 package com.mancy.mybilibili;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -10,6 +11,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,18 +26,28 @@ import butterknife.InjectView;
 public class MainActivity extends AppCompatActivity {
 
 
-    //    @InjectView(R.id.fl_main)
-//    FrameLayout flMain;
-    @InjectView(R.id.navigation_view)
-    NavigationView navigationView;
-    @InjectView(R.id.id_drawer_layout)
-    DrawerLayout idDrawerLayout;
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
     @InjectView(R.id.tablayout)
     TabLayout tablayout;
     @InjectView(R.id.view_pager)
     ViewPager viewPager;
+    @InjectView(R.id.chuaxianLeft)
+    ImageView chuaxianLeft;
+    @InjectView(R.id.navigation_layout)
+    LinearLayout navigationLayout;
+    @InjectView(R.id.appbar)
+    AppBarLayout appbar;
+    @InjectView(R.id.cl_main)
+    CoordinatorLayout clMain;
+    @InjectView(R.id.navigation_view)
+    NavigationView navigationView;
+    @InjectView(R.id.iv_sousuo)
+    ImageView ivSousuo;
+    @InjectView(R.id.iv_more)
+    ImageView ivMore;
+    @InjectView(R.id.id_drawer_layout)
+    DrawerLayout idDrawerLayout;
 
 
     private ArrayList<Fragment> fragment;
@@ -42,11 +58,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setBackgroundColor(Color.parseColor("#FB7299"));
 
 
         initData();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     private void initData() {
@@ -61,10 +81,10 @@ public class MainActivity extends AppCompatActivity {
         tablayout.addTab(tablayout.newTab().setText(titles.get(2)));
 
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new LiveFragment());
-        fragments.add(new TuijianFragment());
-        fragments.add(new ZhuiFanFragment());
-        fragments.add(new FenFragment());
+        fragments.add(new com.mancy.mybilibili.LiveFragment());
+        fragments.add(new com.mancy.mybilibili.TuijianFragment());
+        fragments.add(new com.mancy.mybilibili.ZhuiFanFragment());
+        fragments.add(new com.mancy.mybilibili.FenFragment());
         fragments.add(new FaxainFragment());
 
         viewPager.setOffscreenPageLimit(2);
@@ -73,6 +93,27 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(mFragmentAdapter);
         tablayout.setupWithViewPager(viewPager);
         tablayout.setTabsFromPagerAdapter(mFragmentAdapter);
+
+
+        ivMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "更多", Toast.LENGTH_SHORT).show();
+            }
+        });
+        ivSousuo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "搜索", Toast.LENGTH_SHORT).show();
+            }
+        });
+        chuaxianLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
     }
 
 }
