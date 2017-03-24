@@ -1,7 +1,12 @@
 package com.mancy.mybilibili;
 
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -26,6 +31,8 @@ public class TuijianFragment extends BaseFragment {
     TextView tvMoreHot;
     @InjectView(R.id.gv_hot)
     MyGridView gvHot;
+    @InjectView(R.id.swiperefreshlayout)
+    SwipeRefreshLayout swiperefreshlayout;
     private DirecTvInfo.DataBean data;
     TuiJianAdapter adapter;
     private TextView textView;
@@ -49,6 +56,17 @@ public class TuijianFragment extends BaseFragment {
     public void initData() {
         super.initData();
         getDataFromNet();
+
+        swiperefreshlayout.setDistanceToTriggerSync(100);
+        swiperefreshlayout.setColorSchemeColors(Color.parseColor("#FB7299"));
+        swiperefreshlayout.setProgressBackgroundColorSchemeResource(android.R.color.white);
+        swiperefreshlayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getDataFromNet();
+            }
+        });
+
     }
 
     private void getDataFromNet() {
@@ -68,6 +86,7 @@ public class TuijianFragment extends BaseFragment {
                     public void onResponse(String response, int id) {
                         Log.e("TAG", "onResponse:  联网成功" + response);
                         processData(response);
+                        swiperefreshlayout.setRefreshing(false);
                     }
                 });
 
@@ -93,4 +112,11 @@ public class TuijianFragment extends BaseFragment {
     }
 
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.inject(this, rootView);
+        return rootView;
+    }
 }

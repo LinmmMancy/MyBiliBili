@@ -4,13 +4,24 @@
     android:layout_height="match_parent"
     tools:context=".LiveFragment">
 
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_home"
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+    <!--android:id="@+id/swiperefreshlayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:descendantFocusability="blocksDescendants">-->
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/is_mrflayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.cjj.MaterialRefreshLayout>
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 
 </RelativeLayout>
 

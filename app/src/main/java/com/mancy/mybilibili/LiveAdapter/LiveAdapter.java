@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -33,6 +36,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -314,7 +318,6 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
         private final Context context;
 
-
         @InjectView(R.id.title_pic)
         ImageView titlePic;
         @InjectView(R.id.titles)
@@ -325,6 +328,9 @@ public class LiveAdapter extends RecyclerView.Adapter {
         MyGridView gvHot;
         @InjectView(R.id.textView8)
         TextView textView8;
+        @InjectView(R.id.iv_shuaxin)
+        ImageView ivShuaxin;
+
 
         MappingAdapter mappingAdapter;
 
@@ -334,16 +340,57 @@ public class LiveAdapter extends RecyclerView.Adapter {
             this.context = context;
         }
 
-        public void setData(List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
+        public void setData(final List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
             Log.e("TAG", "setData: 111111111111111");
 
+             List<DirecTvInfo.DataBean.PartitionsBean> partition = new ArrayList<>();
+             Random random = new Random();
+
+            for (int i = 0; i < partition.size(); i++) {
+                partition.add(partitions.get(random.nextInt(9)));
+            }
             mappingAdapter = new MappingAdapter(context, partitions);
             gvHot.setAdapter(mappingAdapter);
+
             tvMoreHot.setText(datas.getPartitions().get(0).getPartition().getCount() + "");
             Glide.with(context)
                     .load(datas.getPartitions().get(0).getPartition().getSub_icon().getSrc())
                     .into(titlePic);
             titles.setText(datas.getPartitions().get(0).getPartition().getName());
+
+            final Animation animation = AnimationUtils.loadAnimation(context, R.anim.tip);
+            LinearInterpolator lin = new LinearInterpolator();
+            animation.setInterpolator(lin);
+            ivShuaxin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "点了", Toast.LENGTH_SHORT).show();
+                    if (animation != null) {
+                        ivShuaxin.startAnimation(animation);
+                        List<DirecTvInfo.DataBean.PartitionsBean> partition = new ArrayList<>();
+                        Random random = new Random();
+                        for (int i = 0; i < 9; i++) {
+                            //设置一个新的随机数据    传入四个随机的item
+                            partition.add(partitions.get(random.nextInt(4)));
+
+                        }
+                        //  新的随机数据  用原来的适配器来传
+
+                        mappingAdapter = new MappingAdapter(context, partition);
+                        gvHot.setAdapter(mappingAdapter);
+
+
+
+//
+                    }
+
+                }
+
+            });
+
+
+
+
 
 
             gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -464,7 +511,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
                 }
             }).start();
             //  banner.setBannerAnimation(BackgroundToForegroundTransformer.class);
-            banner.isAutoPlay(false);
+            //banner.isAutoPlay(false);
 
             banner.setOnBannerListener(new OnBannerListener() {
                 @Override
