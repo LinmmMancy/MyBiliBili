@@ -6,37 +6,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
-import com.mancy.mybilibili.faxian.bean.OriginalBean;
+import com.mancy.mybilibili.faxian.bean.FanJuBean;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * Created by linmingming(林明明) on 2017/3/24.
+ * Created by linmingming(林明明) on 2017/3/25.
  * QQ ：519660797
  * Tel: 17600305015
  * 作用：
  */
 
-public class OriginalAdapter extends BaseAdapter {
+public class FanJuAdapter extends BaseAdapter {
     private final Context context;
-    private final OriginalBean datas;
+    private final List<FanJuBean.DataBean> datas;
 
-
-    public OriginalAdapter(Context context, OriginalBean originalBean) {
+    public FanJuAdapter(Context context, List<FanJuBean.DataBean> data) {
         this.context = context;
-        this.datas = originalBean;
-
+        this.datas = data;
     }
 
     @Override
     public int getCount() {
-        return datas.getData().size();
+        return datas.size();
     }
 
     @Override
@@ -50,11 +49,11 @@ public class OriginalAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
+    public View getView(int position, View convertView, ViewGroup parent) {
 
+             ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = View.inflate(context, R.layout.original_adapter_item, null);
+            convertView = View.inflate(context, R.layout.fanju_adapter_item, null);
 
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
@@ -70,22 +69,18 @@ public class OriginalAdapter extends BaseAdapter {
             }
 
         }
+        viewHolder.tvXiangqing2.setText(datas.get(position).getName() + "");
+        viewHolder.tvXiangqing3.setText("综合评价 " + datas.get(position).getPts() + "");
 
-        viewHolder.tvXiangqing2.setText(datas.getData().get(position).getName() + "");
-        viewHolder.tvXiangqing3.setText("综合评价 " + datas.getData().get(position).getPts() + "");
-
-        viewHolder.tvXiangqing.setText(datas.getData().get(position).getTitle());
+        viewHolder.tvXiangqing.setText(datas.get(position).getTitle());
 
         Glide.with(context)
-                .load(datas.getData().get(position).getCover())
+                .load(datas.get(position).getCover())
                 .into(viewHolder.ivImage);
-
         return convertView;
     }
 
-
-
-    class ViewHolder {
+    static class ViewHolder {
         @InjectView(R.id.tv_xuhao)
         TextView tvXuhao;
         @InjectView(R.id.iv_image)
@@ -96,8 +91,6 @@ public class OriginalAdapter extends BaseAdapter {
         TextView tvXiangqing2;
         @InjectView(R.id.tv_xiangqing3)
         TextView tvXiangqing3;
-        @InjectView(R.id.ll_item)
-        LinearLayout llItem;
 
         ViewHolder(View view) {
             ButterKnife.inject(this, view);

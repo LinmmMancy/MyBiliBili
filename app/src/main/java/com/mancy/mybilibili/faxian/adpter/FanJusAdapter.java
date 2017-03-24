@@ -9,83 +9,70 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.mancy.mybilibili.R;
-import com.mancy.mybilibili.faxian.bean.OriginalBean;
+import com.mancy.mybilibili.faxian.bean.FanJuBean;
 import com.mancy.mybilibili.gridrView.MyListView;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * Created by linmingming(林明明) on 2017/3/24.
+ * Created by linmingming(林明明) on 2017/3/25.
  * QQ ：519660797
  * Tel: 17600305015
  * 作用：
  */
 
-public class OriginalsAdapter extends RecyclerView.Adapter {
+public class FanJusAdapter extends RecyclerView.Adapter {
     private final Context context;
-
-
-
-    private OriginalBean beanList;
+    private final FanJuBean datas;
 
     private LayoutInflater inflater;
 
-
-    public OriginalsAdapter(Context context, OriginalBean data) {
+    public FanJusAdapter(Context context, FanJuBean datas) {
         this.context = context;
-        this.beanList = data;
+        this.datas = datas;
         inflater = LayoutInflater.from(context);
-
 
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        YuanChuanViewHolder yuanChuanViewHolder = (YuanChuanViewHolder) holder;
-
-        yuanChuanViewHolder.setData(beanList);
+        FanJuViewHolder fanJuViewHolder = (FanJuViewHolder) holder;
+        fanJuViewHolder.setData(context,datas.getData());
 
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new YuanChuanViewHolder(context, inflater.inflate(R.layout.yuanchuan_view, null));
+        return new FanJuViewHolder(context, inflater.inflate(R.layout.yuanchuan_view, null));
+
     }
 
-    class YuanChuanViewHolder extends RecyclerView.ViewHolder {
-        @InjectView(R.id.lv_listview)
-        MyListView lvListview;
-        OriginalAdapter adapter;
+    class FanJuViewHolder extends RecyclerView.ViewHolder {
 
         private final Context context;
+        @InjectView(R.id.lv_listview)
+        MyListView lvListview;
+        FanJuAdapter adapter;
 
-        public YuanChuanViewHolder(Context context, View itemView) {
+        public FanJuViewHolder(Context context, View itemView) {
             super(itemView);
             this.context = context;
             ButterKnife.inject(this, itemView);
-
         }
 
-
-        public void setData(OriginalBean originalBean) {
-            adapter = new OriginalAdapter(context, originalBean);
-
+        public void setData(final Context context, final List<FanJuBean.DataBean> data) {
+            adapter = new FanJuAdapter(context,data);
             lvListview.setAdapter(adapter);
             lvListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Toast.makeText(context, ""+data.get(position).getTitle(), Toast.LENGTH_SHORT).show();
                 }
             });
-            lvListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(context, ""+beanList.getData().get(position).getTitle(), Toast.LENGTH_SHORT).show();
-                }
-            });
-
         }
-
     }
 
 

@@ -7,7 +7,6 @@
 
 
     <LinearLayout
-        android:id="@+id/ll_item"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:orientation="horizontal">
@@ -44,30 +43,30 @@
                 android:textColor="#000"
                 android:textSize="15dp" />
 
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:orientation="horizontal"
-              android:layout_height="25dp">
-              <ImageView
-                  android:layout_marginLeft="5dp"
-                  android:layout_gravity="center"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:src="@drawable/ic_category_up"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="25dp">
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_category_up"/>
 
-              <TextView
+                <TextView
 
-                  android:id="@+id/tv_xiangqing2"
-                  android:layout_gravity="center"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text=" 主播名字"
-                  android:paddingLeft="5dp"
-                  android:textColor="#bfbfbf"
-                  android:textSize="15dp" />
+                    android:id="@+id/tv_xiangqing2"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 主播名字"
+                    android:paddingLeft="5dp"
+                    android:textColor="#bfbfbf"
+                    android:textSize="15dp" />
 
 
-          </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_xiangqing3"
