@@ -12,14 +12,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.mancy.mybilibili.FenQuAdapter.FenFragment;
 import com.mancy.mybilibili.LiveAdapter.LiveFragment;
 import com.mancy.mybilibili.TuiJian.TuijianFragment;
 import com.mancy.mybilibili.ZhuiFan.ZhuiFanFragment;
 import com.mancy.mybilibili.faxian.fragment.FaxainFragment;
+import com.wyt.searchbox.SearchFragment;
+import com.wyt.searchbox.custom.IOnSearchClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Fragment> fragment;
     private FloatingActionButton fab;
+    private SearchFragment searchFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +68,33 @@ public class MainActivity extends AppCompatActivity {
 
 
         initData();
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_search:
+                        searchFragment = SearchFragment.newInstance();
+                        searchFragment.setOnSearchClickListener(new IOnSearchClickListener() {
+                            @Override
+                            public void OnSearchClick(String keyword) {
+                                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
+
+
+                            }
+                        });
+                        searchFragment.show(getSupportFragmentManager(), SearchFragment.TAG);
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
         return true;
     }
 

@@ -42,7 +42,8 @@
         <activity android:name=".faxian.activity.HuoDongActivity" />
         <activity android:name=".faxian.activity.RankingActvitity" />
         <activity android:name=".TuiJian.DetailsActivity" />
-        <activity android:name=".LiveAdapter.WebView"></activity>
+        <activity android:name=".LiveAdapter.WebView" />
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>
