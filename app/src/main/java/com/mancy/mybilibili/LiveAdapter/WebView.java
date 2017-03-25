@@ -55,6 +55,8 @@ public class WebView extends AppCompatActivity {
         String link = getIntent().getStringExtra(LiveAdapter.NAME1);
 
 
+
+
         tvTitle.setText(title);
         webview.loadUrl(link);
 

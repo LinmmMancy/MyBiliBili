@@ -15,12 +15,12 @@ public class ZhuiFanBannerBean {
     /**
      * code : 0
      * message : success
-     * result : [{"cover":"http://i0.hdslb.com/bfs/bangumi/790c62dc1d7752620e486480230bc01f4886cd46.jpg","cursor":0,"desc":"第二次公开直播\no(*≧▽≦)ツ┏━┓kimi不要总是搞事\n就你最跳","id":3897,"is_new":1,"link":"http://bangumi.bilibili.com/anime/5061","onDt":"2017-03-22 18:15:00","title":"梦之祭！研究室 21"},{"cover":"http://i0.hdslb.com/bfs/bangumi/31f8adbe9de4ba004b8d97aa173b8d9978c71764.jpg","cursor":0,"desc":"听说那一家子笨蛋又出来了！","id":3862,"is_new":1,"link":"http://bangumi.bilibili.com/anime/92","onDt":"2017-03-21 08:00:00","title":"每度！浦安铁筋家族"},{"cover":"http://i0.hdslb.com/bfs/bangumi/7a3a43959444ed1cf06dcc3b29a0675e22e05009.jpg","cursor":0,"desc":"迷茫的时候也要战斗\n再去看看那些自己曾经付出过努力的地方吧","id":3861,"is_new":1,"link":"http://bangumi.bilibili.com/anime/5787","onDt":"2017-03-20 18:00:00","title":"偶像选举 11"},{"cover":"http://i0.hdslb.com/bfs/bangumi/eae1bfdcf27750933341212d25b82af764fdf67f.jpg","cursor":0,"desc":"请问您今天要来点尾巴肉吗？","id":3859,"link":"http://www.bilibili.com/blackboard/activity-HJBAZ_8sg.html","onDt":"2017-03-19 18:00:00","title":"【AniKey vol.8】这里的龙不得了"},{"cover":"http://i0.hdslb.com/bfs/bangumi/f5932fed37d21a098ea20a387982d694fcbbc241.jpg","cursor":0,"desc":"曾经不愿面对的事物\n却重新变得如此的美丽","id":3823,"link":"http://www.bilibili.com/video/av5753879/","onDt":"2017-03-18 18:00:00","reply":"109","title":"【周末剧场】苍之茧"},{"cover":"http://i0.hdslb.com/bfs/bangumi/50927447dd7e485e092f3da9ee64d18986a47544.jpg","cursor":0,"desc":"嗨嗨嗨醒一醒，四月番都要来了~","id":3852,"link":"http://www.bilibili.com/video/av9218963/","onDt":"2017-03-17 19:14:00","reply":"5229","title":"2017年4月新番介绍"},{"cover":"http://i0.hdslb.com/bfs/bangumi/da7c2f394a52dc7e2f50ffdeb1d912a5b17b5f9a.jpg","cursor":0,"desc":"京阿尼信仰充值！","id":3843,"link":"http://www.bilibili.com/blackboard/activity-Hkwjcpdje.html","onDt":"2017-03-17 18:00:00","title":"【资讯档】2017年第11周"},{"cover":"http://i0.hdslb.com/bfs/bangumi/973e8102edf9a5ec5fb753d33490bb5481daf17f.jpg","cursor":0,"desc":"这一次如果不能成功\n便放弃梦想","id":3824,"link":"http://bangumi.bilibili.com/anime/5798","onDt":"2017-03-16 18:00:00","title":"One Room 10"},{"cover":"http://i0.hdslb.com/bfs/bangumi/e4f06e303884573d71cbe63cf1b6830f452a47ac.jpg","cursor":0,"desc":"老好人小森同学，今天也拒绝不了别人的求助","id":3790,"link":"http://bangumi.bilibili.com/anime/2744","onDt":"2017-03-14 08:00:00","title":"【泡面档】小森同学拒绝不了！"},{"cover":"http://i0.hdslb.com/bfs/bangumi/18a8fa03bf371ff61e1d4f93dd8ed3ccb5e66ede.jpg","cursor":1489312800944,"desc":"总之来吃个安利吧ヽ(✿ﾟ▽ﾟ)ノ\n（或许并不用安利？","id":3784,"link":"http://www.bilibili.com/blackboard/activity-SkN9Q4pqx.html","onDt":"2017-03-12 18:00:00","title":"【CV Collection vol.01】DearGirl~Stories~"}]
+     * result : {"ad":{"body":[],"head":[{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/a093348aea6f7def3ef45a68f6272270e5f0afb1.jpg","link":"http://www.bilibili.com/blackboard/activity-S1aPZanjx.html","pub_time":"2017-03-24 18:58:00","title":"4月新番"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/838fb721044c4031b80e2ece6a709b753f8fc161.jpg","link":"http://bangumi.bilibili.com/anime/5778","pub_time":"2017-03-24 22:30:00","title":"风夏"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/2cc14d831d0a4d7972870e72c1b944fd7a296831.jpg","link":"http://bangumi.bilibili.com/anime/5774","pub_time":"2017-03-24 12:00:00","title":"清恋 SEIREN"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/a368a33425cc0efb883366f9dc69a31a435a2246.jpg","link":"http://bangumi.bilibili.com/anime/2069","pub_time":"2017-03-24 00:00:00","title":"十二国记"}]},"previous":{"list":[{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1677746","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1335217","is_finish":1,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"787351","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}],"season":4,"year":2016},"serializing":[{"cover":"http://i0.hdslb.com/bfs/bangumi/dc99c5c10c3705fd5d0dbdbaf1ef1cf7e7595588.jpg","favourites":"20996","is_finish":0,"is_started":1,"last_time":1490407203,"newest_ep_index":"1","pub_time":1490407200,"season_id":6008,"season_status":2,"title":"梦王国与沉睡的100王子 短篇动画","watching_count":465},{"badge":"付费抢先","cover":"http://i0.hdslb.com/bfs/bangumi/2d86f338ec4c17d5c61a103a3de01a1b27ec184e.jpg","favourites":"876881","is_finish":0,"is_started":1,"last_time":1490407202,"newest_ep_index":"12","pub_time":1483718400,"season_id":5851,"season_status":7,"title":"斗破苍穹","watching_count":424},{"cover":"http://i0.hdslb.com/bfs/bangumi/e49ca84c459f3ceb86ec88aeeaaef4a7ebd1ca1a.jpg","favourites":"7081","is_finish":0,"is_started":1,"last_time":1490400002,"newest_ep_index":"50","pub_time":1459555200,"season_id":5615,"season_status":2,"title":"暖暖日记","watching_count":1},{"cover":"http://i0.hdslb.com/bfs/bangumi/2d0a4095bfee640db70569174b7b23642d641a28.jpg","favourites":"163804","is_finish":0,"is_started":1,"last_time":1490373000,"newest_ep_index":"12","pub_time":1483720200,"season_id":5777,"season_status":2,"title":"Schoolgirl Strikers","watching_count":144},{"cover":"http://i0.hdslb.com/bfs/bangumi/72ef3f2a86c96a8db9abf8c4b7f7fe3c2d17e27b.jpg","favourites":"687801","is_finish":1,"is_started":1,"last_time":1490365802,"newest_ep_index":"12","pub_time":1483711200,"season_id":5778,"season_status":2,"title":"风夏","watching_count":1535},{"cover":"http://i0.hdslb.com/bfs/bangumi/8c7e18df9ca21fc8da6b5860b8f7d2ad1bbf4462.jpg","favourites":"3951","is_finish":0,"is_started":1,"last_time":1490347985,"newest_ep_index":"4","pub_time":1488470400,"season_id":5936,"season_status":2,"title":"茅屋爷爷讲故事","watching_count":10}]}
      */
 
     private int code;
     private String message;
-    private List<ResultBean> result;
+    private ResultBean result;
 
     public int getCode() {
         return code;
@@ -38,109 +38,392 @@ public class ZhuiFanBannerBean {
         this.message = message;
     }
 
-    public List<ResultBean> getResult() {
+    public ResultBean getResult() {
         return result;
     }
 
-    public void setResult(List<ResultBean> result) {
+    public void setResult(ResultBean result) {
         this.result = result;
     }
 
     public static class ResultBean {
         /**
-         * cover : http://i0.hdslb.com/bfs/bangumi/790c62dc1d7752620e486480230bc01f4886cd46.jpg
-         * cursor : 0
-         * desc : 第二次公开直播
-         o(*≧▽≦)ツ┏━┓kimi不要总是搞事
-         就你最跳
-         * id : 3897
-         * is_new : 1
-         * link : http://bangumi.bilibili.com/anime/5061
-         * onDt : 2017-03-22 18:15:00
-         * title : 梦之祭！研究室 21
-         * reply : 109
+         * ad : {"body":[],"head":[{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/a093348aea6f7def3ef45a68f6272270e5f0afb1.jpg","link":"http://www.bilibili.com/blackboard/activity-S1aPZanjx.html","pub_time":"2017-03-24 18:58:00","title":"4月新番"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/838fb721044c4031b80e2ece6a709b753f8fc161.jpg","link":"http://bangumi.bilibili.com/anime/5778","pub_time":"2017-03-24 22:30:00","title":"风夏"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/2cc14d831d0a4d7972870e72c1b944fd7a296831.jpg","link":"http://bangumi.bilibili.com/anime/5774","pub_time":"2017-03-24 12:00:00","title":"清恋 SEIREN"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/a368a33425cc0efb883366f9dc69a31a435a2246.jpg","link":"http://bangumi.bilibili.com/anime/2069","pub_time":"2017-03-24 00:00:00","title":"十二国记"}]}
+         * previous : {"list":[{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1677746","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1335217","is_finish":1,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"787351","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}],"season":4,"year":2016}
+         * serializing : [{"cover":"http://i0.hdslb.com/bfs/bangumi/dc99c5c10c3705fd5d0dbdbaf1ef1cf7e7595588.jpg","favourites":"20996","is_finish":0,"is_started":1,"last_time":1490407203,"newest_ep_index":"1","pub_time":1490407200,"season_id":6008,"season_status":2,"title":"梦王国与沉睡的100王子 短篇动画","watching_count":465},{"badge":"付费抢先","cover":"http://i0.hdslb.com/bfs/bangumi/2d86f338ec4c17d5c61a103a3de01a1b27ec184e.jpg","favourites":"876881","is_finish":0,"is_started":1,"last_time":1490407202,"newest_ep_index":"12","pub_time":1483718400,"season_id":5851,"season_status":7,"title":"斗破苍穹","watching_count":424},{"cover":"http://i0.hdslb.com/bfs/bangumi/e49ca84c459f3ceb86ec88aeeaaef4a7ebd1ca1a.jpg","favourites":"7081","is_finish":0,"is_started":1,"last_time":1490400002,"newest_ep_index":"50","pub_time":1459555200,"season_id":5615,"season_status":2,"title":"暖暖日记","watching_count":1},{"cover":"http://i0.hdslb.com/bfs/bangumi/2d0a4095bfee640db70569174b7b23642d641a28.jpg","favourites":"163804","is_finish":0,"is_started":1,"last_time":1490373000,"newest_ep_index":"12","pub_time":1483720200,"season_id":5777,"season_status":2,"title":"Schoolgirl Strikers","watching_count":144},{"cover":"http://i0.hdslb.com/bfs/bangumi/72ef3f2a86c96a8db9abf8c4b7f7fe3c2d17e27b.jpg","favourites":"687801","is_finish":1,"is_started":1,"last_time":1490365802,"newest_ep_index":"12","pub_time":1483711200,"season_id":5778,"season_status":2,"title":"风夏","watching_count":1535},{"cover":"http://i0.hdslb.com/bfs/bangumi/8c7e18df9ca21fc8da6b5860b8f7d2ad1bbf4462.jpg","favourites":"3951","is_finish":0,"is_started":1,"last_time":1490347985,"newest_ep_index":"4","pub_time":1488470400,"season_id":5936,"season_status":2,"title":"茅屋爷爷讲故事","watching_count":10}]
          */
 
-        private String cover;
-        private int cursor;
-        private String desc;
-        private int id;
-        private int is_new;
-        private String link;
-        private String onDt;
-        private String title;
-        private String reply;
+        private AdBean ad;
+        private PreviousBean previous;
+        private List<SerializingBean> serializing;
 
-        public String getCover() {
-            return cover;
+        public AdBean getAd() {
+            return ad;
         }
 
-        public void setCover(String cover) {
-            this.cover = cover;
+        public void setAd(AdBean ad) {
+            this.ad = ad;
         }
 
-        public int getCursor() {
-            return cursor;
+        public PreviousBean getPrevious() {
+            return previous;
         }
 
-        public void setCursor(int cursor) {
-            this.cursor = cursor;
+        public void setPrevious(PreviousBean previous) {
+            this.previous = previous;
         }
 
-        public String getDesc() {
-            return desc;
+        public List<SerializingBean> getSerializing() {
+            return serializing;
         }
 
-        public void setDesc(String desc) {
-            this.desc = desc;
+        public void setSerializing(List<SerializingBean> serializing) {
+            this.serializing = serializing;
         }
 
-        public int getId() {
-            return id;
+        public static class AdBean {
+            private List<?> body;
+            private List<HeadBean> head;
+
+            public List<?> getBody() {
+                return body;
+            }
+
+            public void setBody(List<?> body) {
+                this.body = body;
+            }
+
+            public List<HeadBean> getHead() {
+                return head;
+            }
+
+            public void setHead(List<HeadBean> head) {
+                this.head = head;
+            }
+
+            public static class HeadBean {
+                /**
+                 * id : 0
+                 * img : http://i0.hdslb.com/bfs/bangumi/a093348aea6f7def3ef45a68f6272270e5f0afb1.jpg
+                 * link : http://www.bilibili.com/blackboard/activity-S1aPZanjx.html
+                 * pub_time : 2017-03-24 18:58:00
+                 * title : 4月新番
+                 */
+
+                private int id;
+                private String img;
+                private String link;
+                private String pub_time;
+                private String title;
+
+                public int getId() {
+                    return id;
+                }
+
+                public void setId(int id) {
+                    this.id = id;
+                }
+
+                public String getImg() {
+                    return img;
+                }
+
+                public void setImg(String img) {
+                    this.img = img;
+                }
+
+                public String getLink() {
+                    return link;
+                }
+
+                public void setLink(String link) {
+                    this.link = link;
+                }
+
+                public String getPub_time() {
+                    return pub_time;
+                }
+
+                public void setPub_time(String pub_time) {
+                    this.pub_time = pub_time;
+                }
+
+                public String getTitle() {
+                    return title;
+                }
+
+                public void setTitle(String title) {
+                    this.title = title;
+                }
+            }
         }
 
-        public void setId(int id) {
-            this.id = id;
+        public static class PreviousBean {
+            /**
+             * list : [{"cover":"http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg","favourites":"1677746","is_finish":1,"last_time":1482262210,"newest_ep_index":"11","pub_time":1475607600,"season_id":5550,"season_status":2,"title":"夏目友人帐 伍","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b75c55d209d156c8631f5ceb21e5c52c834dbb60.jpg","favourites":"1335217","is_finish":1,"last_time":1483196409,"newest_ep_index":"1","pub_time":1483196400,"season_id":5747,"season_status":2,"title":"Fate/Grand Order \u2010First Order\u2010","watching_count":0},{"cover":"http://i0.hdslb.com/bfs/bangumi/b3633d2e5cafa0d048f4beef63618c92cfac4c4c.jpg","favourites":"787351","is_finish":1,"last_time":1482465609,"newest_ep_index":"12","pub_time":1475812800,"season_id":5534,"season_status":2,"title":"我太受欢迎了该怎么办","watching_count":0}]
+             * season : 4
+             * year : 2016
+             */
+
+            private int season;
+            private int year;
+            private List<ListBean> list;
+
+            public int getSeason() {
+                return season;
+            }
+
+            public void setSeason(int season) {
+                this.season = season;
+            }
+
+            public int getYear() {
+                return year;
+            }
+
+            public void setYear(int year) {
+                this.year = year;
+            }
+
+            public List<ListBean> getList() {
+                return list;
+            }
+
+            public void setList(List<ListBean> list) {
+                this.list = list;
+            }
+
+            public static class ListBean {
+                /**
+                 * cover : http://i0.hdslb.com/bfs/bangumi/2673ac643b48eb5bda64c960a2ca850fbebb839d.jpg
+                 * favourites : 1677746
+                 * is_finish : 1
+                 * last_time : 1482262210
+                 * newest_ep_index : 11
+                 * pub_time : 1475607600
+                 * season_id : 5550
+                 * season_status : 2
+                 * title : 夏目友人帐 伍
+                 * watching_count : 0
+                 */
+
+                private String cover;
+                private String favourites;
+                private int is_finish;
+                private int last_time;
+                private String newest_ep_index;
+                private int pub_time;
+                private int season_id;
+                private int season_status;
+                private String title;
+                private int watching_count;
+
+                public String getCover() {
+                    return cover;
+                }
+
+                public void setCover(String cover) {
+                    this.cover = cover;
+                }
+
+                public String getFavourites() {
+                    return favourites;
+                }
+
+                public void setFavourites(String favourites) {
+                    this.favourites = favourites;
+                }
+
+                public int getIs_finish() {
+                    return is_finish;
+                }
+
+                public void setIs_finish(int is_finish) {
+                    this.is_finish = is_finish;
+                }
+
+                public int getLast_time() {
+                    return last_time;
+                }
+
+                public void setLast_time(int last_time) {
+                    this.last_time = last_time;
+                }
+
+                public String getNewest_ep_index() {
+                    return newest_ep_index;
+                }
+
+                public void setNewest_ep_index(String newest_ep_index) {
+                    this.newest_ep_index = newest_ep_index;
+                }
+
+                public int getPub_time() {
+                    return pub_time;
+                }
+
+                public void setPub_time(int pub_time) {
+                    this.pub_time = pub_time;
+                }
+
+                public int getSeason_id() {
+                    return season_id;
+                }
+
+                public void setSeason_id(int season_id) {
+                    this.season_id = season_id;
+                }
+
+                public int getSeason_status() {
+                    return season_status;
+                }
+
+                public void setSeason_status(int season_status) {
+                    this.season_status = season_status;
+                }
+
+                public String getTitle() {
+                    return title;
+                }
+
+                public void setTitle(String title) {
+                    this.title = title;
+                }
+
+                public int getWatching_count() {
+                    return watching_count;
+                }
+
+                public void setWatching_count(int watching_count) {
+                    this.watching_count = watching_count;
+                }
+            }
         }
 
-        public int getIs_new() {
-            return is_new;
-        }
+        public static class SerializingBean {
+            /**
+             * cover : http://i0.hdslb.com/bfs/bangumi/dc99c5c10c3705fd5d0dbdbaf1ef1cf7e7595588.jpg
+             * favourites : 20996
+             * is_finish : 0
+             * is_started : 1
+             * last_time : 1490407203
+             * newest_ep_index : 1
+             * pub_time : 1490407200
+             * season_id : 6008
+             * season_status : 2
+             * title : 梦王国与沉睡的100王子 短篇动画
+             * watching_count : 465
+             * badge : 付费抢先
+             */
 
-        public void setIs_new(int is_new) {
-            this.is_new = is_new;
-        }
+            private String cover;
+            private String favourites;
+            private int is_finish;
+            private int is_started;
+            private int last_time;
+            private String newest_ep_index;
+            private int pub_time;
+            private int season_id;
+            private int season_status;
+            private String title;
+            private int watching_count;
+            private String badge;
 
-        public String getLink() {
-            return link;
-        }
+            public String getCover() {
+                return cover;
+            }
 
-        public void setLink(String link) {
-            this.link = link;
-        }
+            public void setCover(String cover) {
+                this.cover = cover;
+            }
 
-        public String getOnDt() {
-            return onDt;
-        }
+            public String getFavourites() {
+                return favourites;
+            }
 
-        public void setOnDt(String onDt) {
-            this.onDt = onDt;
-        }
+            public void setFavourites(String favourites) {
+                this.favourites = favourites;
+            }
 
-        public String getTitle() {
-            return title;
-        }
+            public int getIs_finish() {
+                return is_finish;
+            }
 
-        public void setTitle(String title) {
-            this.title = title;
-        }
+            public void setIs_finish(int is_finish) {
+                this.is_finish = is_finish;
+            }
 
-        public String getReply() {
-            return reply;
-        }
+            public int getIs_started() {
+                return is_started;
+            }
 
-        public void setReply(String reply) {
-            this.reply = reply;
+            public void setIs_started(int is_started) {
+                this.is_started = is_started;
+            }
+
+            public int getLast_time() {
+                return last_time;
+            }
+
+            public void setLast_time(int last_time) {
+                this.last_time = last_time;
+            }
+
+            public String getNewest_ep_index() {
+                return newest_ep_index;
+            }
+
+            public void setNewest_ep_index(String newest_ep_index) {
+                this.newest_ep_index = newest_ep_index;
+            }
+
+            public int getPub_time() {
+                return pub_time;
+            }
+
+            public void setPub_time(int pub_time) {
+                this.pub_time = pub_time;
+            }
+
+            public int getSeason_id() {
+                return season_id;
+            }
+
+            public void setSeason_id(int season_id) {
+                this.season_id = season_id;
+            }
+
+            public int getSeason_status() {
+                return season_status;
+            }
+
+            public void setSeason_status(int season_status) {
+                this.season_status = season_status;
+            }
+
+            public String getTitle() {
+                return title;
+            }
+
+            public void setTitle(String title) {
+                this.title = title;
+            }
+
+            public int getWatching_count() {
+                return watching_count;
+            }
+
+            public void setWatching_count(int watching_count) {
+                this.watching_count = watching_count;
+            }
+
+            public String getBadge() {
+                return badge;
+            }
+
+            public void setBadge(String badge) {
+                this.badge = badge;
+            }
         }
     }
 }

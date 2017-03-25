@@ -11,7 +11,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
-import com.mancy.mybilibili.bean.DirecTvInfo;
+import com.mancy.mybilibili.TuiJian.TuiJianBean.TuiJianBean;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -25,19 +27,19 @@ import butterknife.InjectView;
 
 public class TuiJianAdapter extends BaseAdapter {
 
+
     private final Context context;
-    private final DirecTvInfo.DataBean datas;
+    private final List<TuiJianBean.DataBean> data;
 
-    public TuiJianAdapter(Context context, DirecTvInfo.DataBean data) {
+    public TuiJianAdapter(Context context, List<TuiJianBean.DataBean> datas) {
         this.context = context;
-        this.datas = data;
-
+        this.data = datas;
     }
 
 
     @Override
     public int getCount() {
-        return datas.getPartitions().size();
+        return data.size();
     }
 
     @Override
@@ -61,10 +63,10 @@ public class TuiJianAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.tvName.setText(datas.getPartitions().get(position).getLives().get(5).getOwner().getName());
-        viewHolder.tvContent.setText(datas.getPartitions().get(position).getLives().get(5).getTitle());
+        viewHolder.tvName.setText(data.get(position).getName());
+        viewHolder.tvContent.setText(data.get(position).getTitle());
         Glide.with(context)
-                .load(datas.getPartitions().get(position).getLives().get(5).getCover().getSrc())
+                .load(data.get(position).getCover())
                 .into(viewHolder.ibPicture);
         viewHolder.itemLiveLayout.setOnClickListener(new View.OnClickListener() {
             @Override

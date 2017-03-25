@@ -1,8 +1,8 @@
 package com.mancy.mybilibili.ZhuiAdapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,25 +14,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
+import com.mancy.mybilibili.LiveAdapter.WebView;
 import com.mancy.mybilibili.R;
 import com.mancy.mybilibili.ZhuiFan.ZhuiFanAdapter;
 import com.mancy.mybilibili.ZhuiFan.ZhuiFanAdapter2;
-import com.mancy.mybilibili.bean.DirecTvInfo;
 import com.mancy.mybilibili.bean.RunPlayBean;
 import com.mancy.mybilibili.bean.ZhuiFanBannerBean;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import okhttp3.Call;
 
 /**
  * Created by linmingming(林明明) on 2017/3/23.
@@ -44,41 +40,10 @@ import okhttp3.Call;
 public class ZhuiAdapter extends RecyclerView.Adapter {
 
 
+    public static final String NAME = "99";
+    public static final String NAME1 = "88";
     private BANNERViewHolder bannerViewHolder;
 
-    private void getDataFromNet() {
-
-        OkHttpUtils.get()
-                .url("http://live.bilibili.com/AppNewIndex/common?_device=android&appkey=1d8b6e7d45233436&build=501000&mobi_app=android&platform=android&scale=hdpi&ts=1490013188000&sign=92541a11ed62841120e786e637b9db3b")
-                .id(100)
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-                        Log.e("TAG", "onError:  失败 " + e.getMessage());
-
-
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-                        Log.e("TAG", "onResponse:  联网成功");
-                        processData(response);
-                    }
-                });
-
-
-    }
-
-
-    private void processData(String json) {
-        DirecTvInfo direcTvInfo = new Gson().fromJson(json, DirecTvInfo.class);
-        dataBean = direcTvInfo.getData();
-        bannerViewHolder.setData(dataBean.getBanner());
-    }
-
-
-    private DirecTvInfo.DataBean dataBean;
 
 //
 
@@ -135,8 +100,8 @@ public class ZhuiAdapter extends RecyclerView.Adapter {
         }
         if (getItemViewType(position) == BANNER) {
             bannerViewHolder = (BANNERViewHolder) holder;
+            bannerViewHolder.setData(datas.getResult());
 
-            getDataFromNet();
         }
         if (getItemViewType(position) == GVIEW2) {
             GVIEW2ViewHolder gview2ViewHolder = (GVIEW2ViewHolder) holder;
@@ -209,10 +174,10 @@ public class ZhuiAdapter extends RecyclerView.Adapter {
             this.context = context;
         }
 
-        public void setData(List<DirecTvInfo.DataBean.BannerBean> banner1) {
+        public void setData(final RunPlayBean.ResultBean result) {
             List<String> images = new ArrayList<>();
-            for (int i = 0; i <= 10; i++) {
-                images.add(banner1.get(0).getImg());
+            for (int i = 0; i < result.getAd().getHead().size(); i++) {
+                images.add(result.getAd().getHead().get(i).getImg());
             }
             banner.setImages(images).setImageLoader(new ImageLoader() {
                 @Override
@@ -230,7 +195,11 @@ public class ZhuiAdapter extends RecyclerView.Adapter {
             banner.setOnBannerListener(new OnBannerListener() {
                 @Override
                 public void OnBannerClick(int position) {
-                    Toast.makeText(context, "position" + position, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, WebView.class);
+                    intent.putExtra(NAME, result.getAd().getHead().get(position).getTitle());
+                    intent.putExtra(NAME1, result.getAd().getHead().get(position).getLink());
+
+                    context.startActivity(intent);
 
                 }
             });
