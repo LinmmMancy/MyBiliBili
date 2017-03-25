@@ -10,12 +10,23 @@
     <item
         android:id="@+id/action_notifications"
         android:icon="@drawable/ic_action_more"
-        android:title="notifications"
+        android:title="测试"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_settings"
         android:icon="@mipmap/ic_launcher"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="帮助"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_notifications2"
+        android:icon="@drawable/ic_action_more"
+        android:title="设置"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings2"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="100"
+        android:title="稿件投诉"
         app:showAsAction="never" />
 </menu>

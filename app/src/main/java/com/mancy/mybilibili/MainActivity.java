@@ -12,10 +12,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.mancy.mybilibili.FenQuAdapter.FenFragment;
 import com.mancy.mybilibili.LiveAdapter.LiveFragment;
@@ -48,10 +46,7 @@ public class MainActivity extends AppCompatActivity {
     CoordinatorLayout clMain;
     @InjectView(R.id.navigation_view)
     NavigationView navigationView;
-    @InjectView(R.id.iv_sousuo)
-    ImageView ivSousuo;
-    @InjectView(R.id.iv_more)
-    ImageView ivMore;
+
     @InjectView(R.id.id_drawer_layout)
     DrawerLayout idDrawerLayout;
 
@@ -64,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        setSupportActionBar(toolbar);
 
 
         initData();
@@ -101,25 +97,6 @@ public class MainActivity extends AppCompatActivity {
         tablayout.setTabsFromPagerAdapter(mFragmentAdapter);
 
 
-        ivMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "更多", Toast.LENGTH_SHORT).show();
-            }
-        });
-        ivSousuo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "搜索", Toast.LENGTH_SHORT).show();
-            }
-        });
-        chuaxianLeft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
     }
 
 }

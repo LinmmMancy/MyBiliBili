@@ -7,12 +7,13 @@
     android:orientation="vertical"
     tools:context="com.mancy.mybilibili.faxian.activity.HuoDongActivity">
 
+    <include layout="@layout/titls" />
 
     <ListView
         android:id="@+id/lv_listview"
-        android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="5dp">
 
 
     </ListView>

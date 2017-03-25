@@ -40,7 +40,9 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".faxian.activity.TopicCenterActivity" />
         <activity android:name=".faxian.activity.HuoDongActivity" />
-        <activity android:name=".faxian.activity.RankingActvitity"></activity>
+        <activity android:name=".faxian.activity.RankingActvitity" />
+        <activity android:name=".TuiJian.DetailsActivity" />
+        <activity android:name=".LiveAdapter.WebView"></activity>
     </application>
 
 </manifest>

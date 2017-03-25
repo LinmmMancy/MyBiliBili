@@ -1,6 +1,7 @@
 package com.mancy.mybilibili.TuiJian;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,13 +66,19 @@ public class TuiJianAdapter extends BaseAdapter {
         Glide.with(context)
                 .load(datas.getPartitions().get(position).getLives().get(5).getCover().getSrc())
                 .into(viewHolder.ibPicture);
+        viewHolder.itemLiveLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, DetailsActivity.class));
+            }
+        });
+
 
         return convertView;
     }
 
 
-
-    class ViewHolder {
+    static class ViewHolder {
         @InjectView(R.id.ibPicture)
         ImageView ibPicture;
         @InjectView(R.id.tv_play)

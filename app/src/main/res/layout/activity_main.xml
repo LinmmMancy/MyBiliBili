@@ -2,6 +2,7 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/id_drawer_layout"
+    style="@style/AppTheme.NoActionBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -65,21 +66,6 @@
                             android:text="未登录"
                             android:textColor="@android:color/white"
                             android:textSize="16sp" />
-
-                        <ImageView
-                            android:id="@+id/iv_sousuo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="130dp"
-                            android:src="@mipmap/ic_toolbar_menu_search" />
-
-                        <ImageView
-                            android:id="@+id/iv_more"
-                            android:layout_width="wrap_content"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="15dp"
-
-                            android:src="@mipmap/ic_action_more" />
 
 
                     </LinearLayout>

@@ -1,6 +1,7 @@
 package com.mancy.mybilibili.LiveAdapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,6 +51,9 @@ import okhttp3.Call;
  */
 
 public class LiveAdapter extends RecyclerView.Adapter {
+
+    public static final String NAME = "99";
+    public static final String NAME1 = "88";
 
     public static final int BANNER = 0;
     public static final int ITEM = 1;
@@ -483,6 +487,7 @@ public class LiveAdapter extends RecyclerView.Adapter {
 
 
     class BannerViewHolder extends RecyclerView.ViewHolder {
+
         private final Context context;
         @InjectView(R.id.banner)
         Banner banner;
@@ -495,10 +500,11 @@ public class LiveAdapter extends RecyclerView.Adapter {
         }
 
 
-        public void setData(List<DirecTvInfo.DataBean.BannerBean> data) {
+        public void setData(final List<DirecTvInfo.DataBean.BannerBean> data) {
             List<String> images = new ArrayList<>();
-            for (int i = 0; i <= 1; i++) {
-                images.add(data.get(0).getImg());
+
+            for (int i = 0; i < data.size(); i++) {
+                images.add(data.get(i).getImg());
             }
             banner.setImages(images).setImageLoader(new ImageLoader() {
                 @Override
@@ -516,7 +522,10 @@ public class LiveAdapter extends RecyclerView.Adapter {
             banner.setOnBannerListener(new OnBannerListener() {
                 @Override
                 public void OnBannerClick(int position) {
-                    Toast.makeText(context, "position" + position, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, WebView.class);
+                    intent.putExtra(NAME,datas.getBanner().get(position).getTitle());
+                    intent.putExtra(NAME1,datas.getBanner().get(position).getLink());
+                    context.startActivity(intent);
 
                 }
             });
