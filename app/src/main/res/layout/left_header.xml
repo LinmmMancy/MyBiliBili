@@ -1,47 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:orientation="vertical">
+    android:layout_height="152dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ic_noface">
+        android:background="#fb7299"
+        android:scaleType="centerCrop" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FB7299">
+    <ImageView
+        android:id="@+id/iv_iv"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="36dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_noface" />
 
+    <TextView
 
-            <ImageView
-                android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="115dp"
+        android:gravity="center"
+        android:text="Mancy_Lin"
+        android:textColor="#fff"
+        android:textSize="20dp" />
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="50dp"
-                android:paddingTop="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_noface" />
-
-            <TextView
-
-                android:id="@+id/textView2"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv"
-                android:paddingLeft="20dp"
-                android:paddingTop="25dp"
-                android:text="MancyLin"
-                android:textSize="20sp" />
-
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</FrameLayout>

@@ -82,6 +82,13 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="Theme.ToolBar.ZhiHu" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="actionOverflowButtonStyle">@style/ActionButton.Overflow.bai</item>
+    </style>
+
+    <style name="ActionButton.Overflow.bai" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+        <item name="android:src">@mipmap/ic_action_more</item>
+    </style>
 
 
 </resources>

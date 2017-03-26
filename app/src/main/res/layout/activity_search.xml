@@ -7,30 +7,47 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/ll_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dp">
 
-
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/iv_search_back"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:iconifiedByDefault="false"
-            android:queryHint="请输入搜索内容" />
+            android:padding="6dp"
+            android:src="@drawable/ic_back_24dp" />
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+        <EditText
+            android:id="@+id/et_search_keyword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="搜索关键字"
+            android:imeOptions="actionSearch"
+            android:padding="6dp"
+            android:singleLine="true"
+            android:textColorHint="@color/text_grey"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_search_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:src="@drawable/ic_search_bg_24dp" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_more"
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="20" />
+
+        android:src="@drawable/ic_search_holder_default" />
 
 
 </LinearLayout>

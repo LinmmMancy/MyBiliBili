@@ -36,34 +36,39 @@
                     android:background="#FB7299"
                     app:contentInsetLeft="0dp"
                     app:contentInsetStart="0dp"
-                    app:menu="@menu/main_layout">
+                    app:menu="@menu/menu_main"
+                    app:theme="@style/Theme.ToolBar.ZhiHu">
 
                     <LinearLayout
+
                         android:id="@+id/navigation_layout"
-                        android:layout_width="match_parent"
+                        android:layout_width="200dp"
                         android:layout_height="match_parent"
-                        android:gravity="center_vertical"
                         android:orientation="horizontal">
 
                         <ImageView
                             android:id="@+id/chuaxianLeft"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/ic_drawer_home" />
 
                         <com.mancy.mybilibili.utils.CircleImageView
+                            android:id="@+id/iv_image"
                             android:layout_width="34dp"
                             android:layout_height="34dp"
+                            android:layout_gravity="center"
                             android:layout_marginEnd="10dp"
                             android:layout_marginStart="10dp"
-                            android:background="@drawable/ic_noface"
+                            android:scaleType="centerCrop"
                             app:border_color="@android:color/white"
                             app:border_width="1dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:maxLines="1"
                             android:text="未登录"
                             android:textColor="@android:color/white"
@@ -79,12 +84,12 @@
                     android:id="@+id/tablayout"
                     style="@style/MyCustomTabLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
 
-                    android:background="#fb7299"
+            android:background="#fb7299"
 
-                    />
-            </LinearLayout>
+            />
+        </LinearLayout>
 
 
         </android.support.design.widget.AppBarLayout>
@@ -108,7 +113,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/left_header"
         app:menu="@menu/main_layout">
 
 

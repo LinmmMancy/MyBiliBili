@@ -2,21 +2,29 @@ package com.mancy.mybilibili;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.SearchView;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.wyt.searchbox.SearchFragment;
+import com.wyt.searchbox.custom.IOnSearchClickListener;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class SearchActivity extends AppCompatActivity {
-    private String[] mStrs = {"aaa", "bbb", "ccc", "airsaid"};
-    @InjectView(R.id.searchView)
-    SearchView searchView;
-    @InjectView(R.id.listView)
-    ListView listView;
 
+
+    @InjectView(R.id.iv_search_back)
+    ImageView ivSearchBack;
+    @InjectView(R.id.et_search_keyword)
+    EditText etSearchKeyword;
+    @InjectView(R.id.iv_search_search)
+    ImageView ivSearchSearch;
+    @InjectView(R.id.ll_layout)
+    LinearLayout llLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,28 +32,48 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         ButterKnife.inject(this);
 
-        listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mStrs));
-        listView.setTextFilterEnabled(true);
-
-        // 设置搜索文本监听
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            // 当点击搜索按钮时触发该方法
+        SearchFragment searchFragment = SearchFragment.newInstance();
+        searchFragment.setOnSearchClickListener(new IOnSearchClickListener() {
             @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
+            public void OnSearchClick(String keyword) {
+                Toast.makeText(SearchActivity.this, "1", Toast.LENGTH_SHORT).show();
+
+
             }
+        });
+        searchFragment.show(getSupportFragmentManager(), SearchFragment.TAG);
+        initListener();
+    }
 
-            // 当搜索内容改变时触发该方法
+    private void initListener() {
+        ivSearchSearch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onQueryTextChange(String newText) {
-                if (!TextUtils.isEmpty(newText)) {
-                    listView.setFilterText(newText);
-                } else {
-                    listView.clearTextFilter();
-                }
-                return false;
+            public void onClick(View v) {
+                Toast.makeText(SearchActivity.this, "搜索", Toast.LENGTH_SHORT).show();
             }
         });
 
+        etSearchKeyword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SearchFragment searchFragment = SearchFragment.newInstance();
+                searchFragment.setOnSearchClickListener(new IOnSearchClickListener() {
+                    @Override
+                    public void OnSearchClick(String keyword) {
+                        Toast.makeText(SearchActivity.this, "1", Toast.LENGTH_SHORT).show();
+
+
+                    }
+                });
+                searchFragment.show(getSupportFragmentManager(), SearchFragment.TAG);
+            }
+        });
+        ivSearchBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
+
 }

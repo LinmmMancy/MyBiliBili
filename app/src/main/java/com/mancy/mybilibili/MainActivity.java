@@ -7,21 +7,25 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.FenQuAdapter.FenFragment;
 import com.mancy.mybilibili.LiveAdapter.LiveFragment;
 import com.mancy.mybilibili.TuiJian.TuijianFragment;
 import com.mancy.mybilibili.ZhuiFan.ZhuiFanFragment;
 import com.mancy.mybilibili.faxian.fragment.FaxainFragment;
+import com.mancy.mybilibili.utils.CircleImageView;
 import com.wyt.searchbox.SearchFragment;
 import com.wyt.searchbox.custom.IOnSearchClickListener;
 
@@ -30,6 +34,7 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,11 +58,17 @@ public class MainActivity extends AppCompatActivity {
 
     @InjectView(R.id.id_drawer_layout)
     DrawerLayout idDrawerLayout;
+    @InjectView(R.id.iv_image)
+    CircleImageView ivImage;
 
 
     private ArrayList<Fragment> fragment;
     private FloatingActionButton fab;
     private SearchFragment searchFragment;
+    private ImageView iviv;
+
+    private Integer[] mThumbIds = {
+            R.drawable.bangumi_home_index_jp_ic,};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         setSupportActionBar(toolbar);
+
+        View heardView = navigationView.inflateHeaderView(R.layout.left_header);
+        iviv = (ImageView) heardView.findViewById(R.id.iv_iv);
+        Glide.with(this).load(mThumbIds[0]).bitmapTransform(
+                new CropCircleTransformation(this)).crossFade(1000).into(iviv);
 
 
         initData();
@@ -84,8 +100,18 @@ public class MainActivity extends AppCompatActivity {
                         });
                         searchFragment.show(getSupportFragmentManager(), SearchFragment.TAG);
                         break;
+
+
                 }
                 return true;
+            }
+        });
+
+
+        navigationLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                idDrawerLayout.openDrawer(GravityCompat.START);
             }
         });
     }
@@ -99,6 +125,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
+
+
+        Glide.with(this).load(mThumbIds[0]).bitmapTransform(
+                new CropCircleTransformation(this)).crossFade(1000).into(ivImage);
 
 
         List<String> titles = new ArrayList<>();
@@ -116,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(new FenFragment());
         fragments.add(new FaxainFragment());
 
-        viewPager.setOffscreenPageLimit(2);
+        viewPager.setOffscreenPageLimit(fragments.size());
 
         FragmentAdapter mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         viewPager.setAdapter(mFragmentAdapter);
