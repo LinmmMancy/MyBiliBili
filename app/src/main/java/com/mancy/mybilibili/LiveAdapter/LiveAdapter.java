@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
+import com.mancy.mybilibili.SearchActivity;
 import com.mancy.mybilibili.XuanxiangAdapter.XuanXiangAdapter;
 import com.mancy.mybilibili.bean.DirecTvInfo;
 import com.mancy.mybilibili.gridrView.Constants;
@@ -189,7 +190,16 @@ public class LiveAdapter extends RecyclerView.Adapter {
             gvPartion.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(context, "postion" + position, Toast.LENGTH_SHORT).show();
+                    if (position == 0) {
+                        Toast.makeText(context, "关注", Toast.LENGTH_SHORT).show();
+                    } else if (position == 1) {
+                        Toast.makeText(context, "中心", Toast.LENGTH_SHORT).show();
+                    } else if (position == 2) {
+                        context.startActivity(new Intent(context, SearchActivity.class));
+                    } else if (position == 4) {
+                        Toast.makeText(context, "全部", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
             });
 
@@ -269,7 +279,9 @@ public class LiveAdapter extends RecyclerView.Adapter {
             gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(context, "position" + position, Toast.LENGTH_SHORT).show();
+
+//                    Toast.makeText(context, "position" + position, Toast.LENGTH_SHORT).show();
+
                 }
             });
 
@@ -347,8 +359,8 @@ public class LiveAdapter extends RecyclerView.Adapter {
         public void setData(final List<DirecTvInfo.DataBean.PartitionsBean> partitions) {
             Log.e("TAG", "setData: 111111111111111");
 
-             List<DirecTvInfo.DataBean.PartitionsBean> partition = new ArrayList<>();
-             Random random = new Random();
+            List<DirecTvInfo.DataBean.PartitionsBean> partition = new ArrayList<>();
+            Random random = new Random();
 
             for (int i = 0; i < partition.size(); i++) {
                 partition.add(partitions.get(random.nextInt(9)));
@@ -384,17 +396,12 @@ public class LiveAdapter extends RecyclerView.Adapter {
                         gvHot.setAdapter(mappingAdapter);
 
 
-
 //
                     }
 
                 }
 
             });
-
-
-
-
 
 
             gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -523,8 +530,8 @@ public class LiveAdapter extends RecyclerView.Adapter {
                 @Override
                 public void OnBannerClick(int position) {
                     Intent intent = new Intent(context, WebView.class);
-                    intent.putExtra(NAME,datas.getBanner().get(position).getTitle());
-                    intent.putExtra(NAME1,datas.getBanner().get(position).getLink());
+                    intent.putExtra(NAME, datas.getBanner().get(position).getTitle());
+                    intent.putExtra(NAME1, datas.getBanner().get(position).getLink());
                     context.startActivity(intent);
 
                 }

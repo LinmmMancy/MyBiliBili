@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.R;
 import com.mancy.mybilibili.TuiJian.TuiJianBean.TuiJianBean;
+import com.mancy.mybilibili.shiping.DanmkuVideoActivity;
 
 import java.util.List;
 
@@ -71,7 +72,7 @@ public class TuiJianAdapter extends BaseAdapter {
         viewHolder.itemLiveLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, DetailsActivity.class));
+                context.startActivity(new Intent(context, DanmkuVideoActivity.class));
             }
         });
 

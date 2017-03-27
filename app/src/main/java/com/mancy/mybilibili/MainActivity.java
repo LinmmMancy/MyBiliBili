@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         initData();
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void OnSearchClick(String keyword) {
                                 Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
+//                                ToastUtil.showSuccessMsg("lalallala ");
 
 
                             }

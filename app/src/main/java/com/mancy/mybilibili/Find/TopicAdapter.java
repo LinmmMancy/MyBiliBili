@@ -60,7 +60,6 @@ public class TopicAdapter extends BaseAdapter {
         ViewHolder viewHolder;
 
 
-
         if (convertView == null) {
             convertView = View.inflate(context, R.layout.topic_item, null);
 
@@ -76,11 +75,9 @@ public class TopicAdapter extends BaseAdapter {
         viewHolder.cdView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, ""+datas.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "" + datas.get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
 
         return convertView;

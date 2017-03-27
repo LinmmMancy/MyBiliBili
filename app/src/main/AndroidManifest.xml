@@ -41,9 +41,11 @@
         <activity android:name=".faxian.activity.TopicCenterActivity" />
         <activity android:name=".faxian.activity.HuoDongActivity" />
         <activity android:name=".faxian.activity.RankingActvitity" />
+        <activity android:name=".shiping.DanmkuVideoActivity" />
         <activity android:name=".TuiJian.DetailsActivity" />
         <activity android:name=".LiveAdapter.WebView" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".faxian.fragment.ShopActivity"></activity>
     </application>
 
 </manifest>

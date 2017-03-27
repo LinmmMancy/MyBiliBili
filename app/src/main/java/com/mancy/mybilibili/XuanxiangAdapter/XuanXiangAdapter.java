@@ -1,7 +1,6 @@
 package com.mancy.mybilibili.XuanxiangAdapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -10,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mancy.mybilibili.R;
-import com.mancy.mybilibili.SearchActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -70,16 +68,9 @@ public class XuanXiangAdapter extends BaseAdapter {
         viewHolder.ivItemPartion.setImageResource(mThumbIds[position]);
         viewHolder.tvItemPartion.setText(mText[position]);
 
-        viewHolder.llItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(context, SearchActivity.class));
-            }
-        });
 
         return convertView;
     }
-
 
 
     class ViewHolder {

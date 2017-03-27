@@ -3,7 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
+    <color name="msg_status_success">#FB7299</color>
+    <color name="msg_status_warn">#FB7299</color>
 
     <color name="transparent">#0000</color>
 

@@ -9,12 +9,7 @@
     >
 
 
-    <com.mancy.mybilibili.gridrView.MyListView
-        android:id="@+id/lv_listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </com.mancy.mybilibili.gridrView.MyListView>
 
 
 </LinearLayout>
