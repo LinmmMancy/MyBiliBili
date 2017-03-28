@@ -1,5 +1,6 @@
 package com.mancy.mybilibili;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -17,11 +18,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.mancy.mybilibili.FenQuAdapter.FenFragment;
 import com.mancy.mybilibili.LiveAdapter.LiveFragment;
+import com.mancy.mybilibili.LoginActivity.LoginActivity;
 import com.mancy.mybilibili.TuiJian.TuijianFragment;
 import com.mancy.mybilibili.ZhuiFan.ZhuiFanFragment;
 import com.mancy.mybilibili.faxian.fragment.FaxainFragment;
@@ -82,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(mThumbIds[0]).bitmapTransform(
                 new CropCircleTransformation(this)).crossFade(1000).into(iviv);
 
+        iviv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                Toast.makeText(MainActivity.this, "头像", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
 
         initData();
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -94,8 +104,9 @@ public class MainActivity extends AppCompatActivity {
                         searchFragment.setOnSearchClickListener(new IOnSearchClickListener() {
                             @Override
                             public void OnSearchClick(String keyword) {
-                                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
 //                                ToastUtil.showSuccessMsg("lalallala ");
+                                startActivity(new Intent(MainActivity.this, SearchActivity.class));
 
 
                             }

@@ -1,18 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:background="#ffffff"
 
-    <com.youth.banner.Banner
-        android:id="@+id/banner"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_gravity="center_horizontal"
-        app:image_scale_type="fit_xy"
-        app:indicator_height="5dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:background="#fb7299">
 
-        app:indicator_width="5dp"
-        app:is_auto_play="true" />
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="BiliBili-周边商城"
+            android:textColor="#fff"
+            android:textSize="20dp" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="490dp" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3.10"
+        android:background="@drawable/home_bottom_parent_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tb_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/main_home_press"
+            android:gravity="center"
+            android:text="首页"
+
+            android:textColor="@color/material_red" />
+
+
+        <RadioButton
+            android:id="@+id/rb_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/main_cart_press"
+            android:gravity="center"
+            android:text="购物车"
+
+            android:textColor="@color/material_red" />
+
+
+    </RadioGroup>
+
 </LinearLayout>

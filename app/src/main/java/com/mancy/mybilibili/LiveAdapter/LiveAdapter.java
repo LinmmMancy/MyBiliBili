@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
+import com.mancy.mybilibili.LoginActivity.LoginActivity;
 import com.mancy.mybilibili.R;
 import com.mancy.mybilibili.SearchActivity;
 import com.mancy.mybilibili.XuanxiangAdapter.XuanXiangAdapter;
@@ -192,8 +193,10 @@ public class LiveAdapter extends RecyclerView.Adapter {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     if (position == 0) {
                         Toast.makeText(context, "关注", Toast.LENGTH_SHORT).show();
+                        context.startActivity(new Intent(context, LoginActivity.class));
                     } else if (position == 1) {
                         Toast.makeText(context, "中心", Toast.LENGTH_SHORT).show();
+                        context.startActivity(new Intent(context, LoginActivity.class));
                     } else if (position == 2) {
                         context.startActivity(new Intent(context, SearchActivity.class));
                     } else if (position == 4) {

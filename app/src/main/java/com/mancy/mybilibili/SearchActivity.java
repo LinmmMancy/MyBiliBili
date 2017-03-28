@@ -11,7 +11,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.mancy.mybilibili.faxian.fragment.TotalStationFragment;
+import com.mancy.mybilibili.search.FanFragment;
+import com.mancy.mybilibili.search.QuanbuFragment;
+import com.mancy.mybilibili.search.UPFragment;
+import com.mancy.mybilibili.search.VideoFragment;
 import com.wyt.searchbox.SearchFragment;
 import com.wyt.searchbox.custom.IOnSearchClickListener;
 
@@ -100,11 +103,10 @@ public class SearchActivity extends AppCompatActivity {
         tablayout.addTab(tablayout.newTab().setText(titles.get(2)));
 
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(new TotalStationFragment());
-        fragments.add(new TotalStationFragment());
-        fragments.add(new TotalStationFragment());
-        fragments.add(new TotalStationFragment());
-        fragments.add(new TotalStationFragment());
+        fragments.add(new QuanbuFragment());
+        fragments.add(new FanFragment());
+        fragments.add(new UPFragment());
+        fragments.add(new VideoFragment());
 
         viewPager.setOffscreenPageLimit(fragments.size());
 

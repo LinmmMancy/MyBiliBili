@@ -16,7 +16,7 @@ public class FragmentAdapters extends FragmentStatePagerAdapter {
 
     private final List<Fragment> mFragments;
     private final List<String> mTitles;
-    private String[] titles = new String[]{"全部", "3C周边", "抱枕萌物", "梦100周边", "官方淘宝店"};
+    private String[] titles = new String[]{"综合", "番剧", "UP主（2）", "影视"};
 
 
     public FragmentAdapters(FragmentManager fm, List<Fragment> fragments, List<String> titles) {

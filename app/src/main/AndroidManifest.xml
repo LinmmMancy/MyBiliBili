@@ -45,7 +45,8 @@
         <activity android:name=".TuiJian.DetailsActivity" />
         <activity android:name=".LiveAdapter.WebView" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".faxian.fragment.ShopActivity"></activity>
+        <activity android:name=".faxian.fragment.ShopActivity" />
+        <activity android:name=".LoginActivity.LoginActivity"></activity>
     </application>
 
 </manifest>
