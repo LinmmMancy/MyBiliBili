@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.mancy.mybilibili.BaseFragment;
+import com.mancy.mybilibili.R;
 
 /**
  * Created by linmingming(林明明) on 2017/3/28.
@@ -26,7 +27,9 @@ public class ShopCarFragment extends BaseFragment {
 
         textView.setTextColor(Color.RED);
 
-        return textView;
+        View view = View.inflate(context, R.layout.activity_shopping_acativity, null);
+
+        return view;
     }
 
     @Override
