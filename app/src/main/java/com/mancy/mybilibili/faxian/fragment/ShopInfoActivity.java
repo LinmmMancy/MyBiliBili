@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,9 +28,12 @@ import com.mancy.mybilibili.gridrView.GoodsBean;
 import com.mancy.mybilibili.utils.AddSubView;
 import com.mancy.mybilibili.utils.VirtualkeyboardHeight;
 
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+
 
 public class ShopInfoActivity extends AppCompatActivity {
 
@@ -82,6 +86,7 @@ public class ShopInfoActivity extends AppCompatActivity {
     private ShopXiangqing shopXiangqing;
 
     private ShopXiangqingDao shopXiangqingDao;
+    private int id;
 
 
     @Override
@@ -100,6 +105,7 @@ public class ShopInfoActivity extends AppCompatActivity {
         title = getIntent().getStringExtra(ShopHomeFragment.TITLE);
         imags = getIntent().getStringExtra(ShopHomeFragment.IMAGES);
         jiage = getIntent().getStringExtra(ShopHomeFragment.JIAGE);
+        id = getIntent().getIntExtra(ShopHomeFragment.ID, 0);
 
         //设置图片
         Glide.with(this)
@@ -111,7 +117,7 @@ public class ShopInfoActivity extends AppCompatActivity {
 
         tvGoodInfoName.setText(title);
 
-        tvGoodInfoPrice.setText("￥" + jiage);
+        tvGoodInfoPrice.setText( jiage);
     }
 
     @OnClick({R.id.ib_good_info_back, R.id.ib_good_info_more, R.id.wb_good_info_more, R.id.tv_good_info_callcenter, R.id.tv_good_info_collection, R.id.tv_good_info_cart, R.id.btn_good_info_addcart, R.id.tv_more_share, R.id.tv_more_search, R.id.tv_more_home, R.id.btn_more})
@@ -146,7 +152,7 @@ public class ShopInfoActivity extends AppCompatActivity {
                 break;
             case R.id.tv_good_info_collection:
                 Toast.makeText(this, "收藏", Toast.LENGTH_SHORT).show();
-
+                shopXiangqingDao.deleteAll();
                 break;
             case R.id.tv_good_info_cart:
                 Toast.makeText(this, "购物车", Toast.LENGTH_SHORT).show();
@@ -281,9 +287,23 @@ public class ShopInfoActivity extends AppCompatActivity {
                 // Log.e("TAG", "66:" + tempGoodsBean.toString());
                 Toast.makeText(ShopInfoActivity.this, "添加购物车成功", Toast.LENGTH_SHORT).show();
 
-                shopXiangqing = new ShopXiangqing(null, imags, title, jiage, true);
+                shopXiangqing = new ShopXiangqing((long) id, title, jiage, imags, true);
 
-                shopXiangqingDao.insert(shopXiangqing);
+
+                ShopXiangqing gb = shopXiangqingDao.queryBuilder().where(ShopXiangqingDao.Properties.Id.eq(shopXiangqing.getId())).build().unique();
+                if (gb != null) {
+                    shopXiangqingDao.update(shopXiangqing);
+                } else {
+                    shopXiangqingDao.insert(shopXiangqing);
+                }
+
+
+                List<ShopXiangqing> list = shopXiangqingDao.loadAll();
+                String name = "";
+                for (int i = 0; i < list.size(); i++) {
+                    Log.e("TAG", "onClick: " + list.get(i));
+                }
+//
 
 
 //                Toast.makeText(ShopInfoActivity.this, "存储数据成功", Toast.LENGTH_SHORT).show();

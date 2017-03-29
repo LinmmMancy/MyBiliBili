@@ -71,9 +71,21 @@ public class ShopXiangqing {
         this.jiage = jiage;
         this.photo = photo;
         this.iscked = iscked;
+
     }
 
     @Generated(hash = 79786367)
     public ShopXiangqing() {
+    }
+
+    @Override
+    public String toString() {
+        return "ShopXiangqing{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", jiage='" + jiage + '\'' +
+                ", photo='" + photo + '\'' +
+                ", iscked=" + iscked +
+                '}';
     }
 }

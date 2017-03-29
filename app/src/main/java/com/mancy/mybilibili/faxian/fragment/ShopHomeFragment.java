@@ -33,6 +33,7 @@ public class ShopHomeFragment extends BaseFragment {
     public static final String IMAGES = "images";
     public static final String TITLE = "title";
     public static final String JIAGE = "jiage";
+    public static final String ID = "id";
     @InjectView(R.id.gv_hot)
     MyGridView gvHot;
     private TextView textView;
@@ -57,16 +58,14 @@ public class ShopHomeFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-getDataFromNet();
+        getDataFromNet();
         Log.e("TAG", "我是分类");
 
 //        textView.setText("首页");
 
 
+    }
 
-
-
-}
     private void getDataFromNet() {
 
         OkHttpUtils.get()
@@ -101,21 +100,21 @@ getDataFromNet();
         shopdata = shopHomeBean.getResult();
 
 
-
         GridLayoutManager manager = new GridLayoutManager(context, 1);
-        adapter = new ShopHomeadapter(context,shopdata);
+        adapter = new ShopHomeadapter(context, shopdata);
         gvHot.setAdapter(adapter);
-      gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-          @Override
-          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-              Toast.makeText(context, ""+shopdata.getRecords().get(position).getTitle(), Toast.LENGTH_SHORT).show();
-              Intent intent = new Intent(context,ShopInfoActivity.class);
-              intent.putExtra(IMAGES,shopdata.getRecords().get(position).getImgUrl());
-              intent.putExtra(TITLE,shopdata.getRecords().get(position).getTitle());
-              intent.putExtra(JIAGE,shopdata.getRecords().get(position).getSalvePrice());
-              context.startActivity(intent);
-          }
-      });
+        gvHot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(context, "" + shopdata.getRecords().get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ShopInfoActivity.class);
+                intent.putExtra(IMAGES, shopdata.getRecords().get(position).getImgUrl());
+                intent.putExtra(TITLE, shopdata.getRecords().get(position).getTitle());
+                intent.putExtra(JIAGE, shopdata.getRecords().get(position).getSalvePrice()+"");
+                intent.putExtra(ID, shopdata.getRecords().get(position).getSkuId());
+                context.startActivity(intent);
+            }
+        });
     }
 
 
