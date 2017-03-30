@@ -21,7 +21,17 @@ public class ShopXiangqing {
     // tupian
     private String photo;
 
-    private boolean iscked;
+    private boolean iscked = true;
+
+    private int number = 1;
+
+    public int getNumber() {
+        return this.number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
 
     public boolean getIscked() {
         return this.iscked;
@@ -63,29 +73,18 @@ public class ShopXiangqing {
         this.id = id;
     }
 
-    @Generated(hash = 81961770)
+    @Generated(hash = 1879974029)
     public ShopXiangqing(Long id, String title, String jiage, String photo,
-            boolean iscked) {
+            boolean iscked, int number) {
         this.id = id;
         this.title = title;
         this.jiage = jiage;
         this.photo = photo;
         this.iscked = iscked;
-
+        this.number = number;
     }
 
     @Generated(hash = 79786367)
     public ShopXiangqing() {
-    }
-
-    @Override
-    public String toString() {
-        return "ShopXiangqing{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", jiage='" + jiage + '\'' +
-                ", photo='" + photo + '\'' +
-                ", iscked=" + iscked +
-                '}';
     }
 }

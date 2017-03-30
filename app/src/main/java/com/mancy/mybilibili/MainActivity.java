@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
+import com.mancy.mybilibili.Downlist.DownloadListActivity;
 import com.mancy.mybilibili.FenQuAdapter.FenFragment;
 import com.mancy.mybilibili.LiveAdapter.LiveFragment;
 import com.mancy.mybilibili.LoginActivity.LoginActivity;
@@ -112,6 +113,11 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                         searchFragment.show(getSupportFragmentManager(), SearchFragment.TAG);
+
+                        break;
+
+                    case R.id.action_settings:
+                        startActivity(new Intent(MainActivity.this, DownloadListActivity.class));
                         break;
 
 

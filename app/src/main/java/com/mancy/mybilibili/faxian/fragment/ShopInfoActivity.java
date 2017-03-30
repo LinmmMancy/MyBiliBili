@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,8 +26,6 @@ import com.mancy.mybilibili.gen.ShopXiangqingDao;
 import com.mancy.mybilibili.gridrView.GoodsBean;
 import com.mancy.mybilibili.utils.AddSubView;
 import com.mancy.mybilibili.utils.VirtualkeyboardHeight;
-
-import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -105,7 +102,7 @@ public class ShopInfoActivity extends AppCompatActivity {
         title = getIntent().getStringExtra(ShopHomeFragment.TITLE);
         imags = getIntent().getStringExtra(ShopHomeFragment.IMAGES);
         jiage = getIntent().getStringExtra(ShopHomeFragment.JIAGE);
-        id = getIntent().getIntExtra(ShopHomeFragment.ID, 0);
+        //id = getIntent().getIntExtra(ShopHomeFragment.ID, 0);
 
         //设置图片
         Glide.with(this)
@@ -152,7 +149,7 @@ public class ShopInfoActivity extends AppCompatActivity {
                 break;
             case R.id.tv_good_info_collection:
                 Toast.makeText(this, "收藏", Toast.LENGTH_SHORT).show();
-                shopXiangqingDao.deleteAll();
+               // shopXiangqingDao.deleteAll();
                 break;
             case R.id.tv_good_info_cart:
                 Toast.makeText(this, "购物车", Toast.LENGTH_SHORT).show();
@@ -264,7 +261,7 @@ public class ShopInfoActivity extends AppCompatActivity {
         nas_goodinfo_num.setOnNumberChangerListener(new AddSubView.OnNumberChangerListener() {
             @Override
             public void onNumberChanger(int value) {
-//                tempGoodsBean.setNumber(value);
+               tempGoodsBean.setNumber(value);
             }
         });
 
@@ -285,12 +282,14 @@ public class ShopInfoActivity extends AppCompatActivity {
                 //添加购物车
 //                CartStorage.getInstance(GoodsInfoActivity.this).addData(tempGoodsBean);
                 // Log.e("TAG", "66:" + tempGoodsBean.toString());
-                Toast.makeText(ShopInfoActivity.this, "添加购物车成功", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(ShopInfoActivity.this, "添加购物车成功", Toast.LENGTH_SHORT).show();
+                shopXiangqing = new ShopXiangqing(null, title, jiage, imags, true,1);
 
-                shopXiangqing = new ShopXiangqing((long) id, title, jiage, imags, true);
+                shopXiangqingDao.insert(shopXiangqing);
+                Toast.makeText(ShopInfoActivity.this, "加入购物车成功", Toast.LENGTH_SHORT).show();
 
 
-                ShopXiangqing gb = shopXiangqingDao.queryBuilder().where(ShopXiangqingDao.Properties.Id.eq(shopXiangqing.getId())).build().unique();
+              /*  ShopXiangqing gb = shopXiangqingDao.queryBuilder().where(ShopXiangqingDao.Properties.Id.eq(shopXiangqing.getId())).build().unique();
                 if (gb != null) {
                     shopXiangqingDao.update(shopXiangqing);
                 } else {
@@ -303,7 +302,7 @@ public class ShopInfoActivity extends AppCompatActivity {
                 for (int i = 0; i < list.size(); i++) {
                     Log.e("TAG", "onClick: " + list.get(i));
                 }
-//
+//*/
 
 
 //                Toast.makeText(ShopInfoActivity.this, "存储数据成功", Toast.LENGTH_SHORT).show();

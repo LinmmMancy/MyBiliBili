@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Handler;
 
+import cn.jpush.android.api.JPushInterface;
+
 
 /**
  * Created by Mancy on 2017/3/12.
@@ -24,6 +26,8 @@ public class MyAppcation extends Application {
         context = this;
         threadid = android.os.Process.myPid();
         handler = new Handler();
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
 
      //   CrashHandler.getInstance().init();
 
