@@ -1,5 +1,6 @@
 package com.mancy.mybilibili.LiveAdapter;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -35,13 +36,36 @@ public class WebView extends AppCompatActivity {
     private String link;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
         ButterKnife.inject(this);
         initData();
+        initListener();
+    }
+
+    private void initListener() {
+
+        ibMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // intent.setType("text/plain"); //纯文本
+            /*
+             * 图片分享 it.setType("image/png"); 　//添加图片 File f = new
+             * File(Environment.getExternalStorageDirectory()+"/name.png");
+             *
+             * Uri uri = Uri.fromFile(f); intent.putExtra(Intent.EXTRA_STREAM,
+             * uri); 　
+             */
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("image/*");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Share");
+                intent.putExtra(Intent.EXTRA_TEXT, "App software from Mr.Lin");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(Intent.createChooser(intent, getTitle()));
+            }
+        });
     }
 
     protected void initData() {
@@ -53,8 +77,6 @@ public class WebView extends AppCompatActivity {
         });
         String title = getIntent().getStringExtra(LiveAdapter.NAME);
         String link = getIntent().getStringExtra(LiveAdapter.NAME1);
-
-
 
 
         tvTitle.setText(title);
