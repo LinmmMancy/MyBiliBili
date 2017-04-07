@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.mancy.mybilibili.BaseFragment;
+import com.mancy.mybilibili.Fragment.BaseFragment;
 import com.mancy.mybilibili.R;
 import com.mancy.mybilibili.gridrView.MyListView;
 import com.mancy.mybilibili.search.adapter.ZongheAdapter;

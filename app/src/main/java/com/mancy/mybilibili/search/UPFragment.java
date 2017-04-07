@@ -5,7 +5,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.mancy.mybilibili.BaseFragment;
+import com.mancy.mybilibili.Fragment.BaseFragment;
 
 /**
  * Created by linmingming(林明明) on 2017/3/24.

@@ -1,17 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+    tools:context=".view.activity.MainActivity">
     <item
         android:id="@+id/action_search"
         android:icon="@mipmap/ic_toolbar_menu_search"
         android:title="Search"
         app:showAsAction="ifRoom" />
     <!--<item-->
-        <!--android:id="@+id/action_notifications"-->
-        <!--android:icon="@drawable/ic_action_more"-->
-        <!--android:title="notifications"-->
-        <!--app:showAsAction="ifRoom" />-->
+    <!--android:id="@+id/action_notifications"-->
+    <!--android:icon="@drawable/ic_action_more"-->
+    <!--android:title="notifications"-->
+    <!--app:showAsAction="ifRoom" />-->
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="50"
@@ -20,4 +20,8 @@
         android:id="@+id/action_settings2"
         android:orderInCategory="50"
         android:title="@string/action_games" />
+    <item
+        android:id="@+id/action_settings3"
+        android:orderInCategory="50"
+        android:title="@string/action_lanya" />
 </menu>

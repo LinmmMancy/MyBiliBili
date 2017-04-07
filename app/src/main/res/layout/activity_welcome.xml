@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/welcome"
 
-    tools:context="com.mancy.mybilibili.WelcomeActivity">
+    tools:context=".view.activity.WelcomeActivity">
 
 </RelativeLayout>

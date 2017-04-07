@@ -86,4 +86,11 @@ dependencies {
     compile 'cn.jiguang.sdk:jcore:1.1.1'  // 此处以JCore 1.1.1 版本为例。
 
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
+
+
+
+    //核心库
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+//用来Gson解析
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
 }
